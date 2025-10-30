@@ -1,4 +1,13 @@
 ---
+import { generateAllThemesCSS } from '../config/colors';
+import '../styles/global.css';
+
+/**
+ * CHANGE THEME HERE FOR INSTANT HOT-RELOAD
+ * Available: 'warm-caring' | 'golden-hour' | 'autumn-comfort' | 'tech-blue'
+ */
+const THEME = 'golden-hour';
+
 interface Props {
   title?: string;
   description?: string;
@@ -10,10 +19,13 @@ const {
   description = "Keep your family healthy and safe with DeeDee. Monitor health signals that matter most and get alerts before small issues become big problems.",
   simpleNav = false
 } = Astro.props;
+
+// Generate CSS for all themes
+const themesCSS = generateAllThemesCSS();
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme={THEME}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,10 +40,8 @@ const {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Global Styles -->
-  <style is:global>
-    @import '../styles/global.css';
-  </style>
+  <!-- Theme Overrides -->
+  <style is:global set:html={themesCSS}></style>
 </head>
 <body>
   <!-- Header -->
@@ -158,7 +168,7 @@ const {
     }
 
     .footer-section p {
-      color: rgba(255, 255, 255, 0.8);
+      color: var(--color-text-muted);
       margin: 0;
     }
 
@@ -171,7 +181,7 @@ const {
     }
 
     .footer-section a {
-      color: rgba(255, 255, 255, 0.8);
+      color: var(--color-text-muted);
       transition: color var(--transition-fast);
     }
 
@@ -180,13 +190,13 @@ const {
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      border-top: 1px solid var(--color-border-light);
       padding-top: var(--space-lg);
       text-align: center;
     }
 
     .footer-bottom p {
-      color: rgba(255, 255, 255, 0.6);
+      color: var(--color-text-faded);
       margin: 0;
     }
 
