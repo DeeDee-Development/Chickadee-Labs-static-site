@@ -35,14 +35,14 @@ const {
   <!-- Header -->
   <header class="header">
     <nav class="container nav">
-      <a href="" class="logo">
+      <a href={import.meta.env.BASE_URL} class="logo">
         <span class="logo-text">DeeDee Health</span>
       </a>
       <ul class="nav-links">
-        <li><a href="caregivers/">For Caregivers</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#solution">Solution</a></li>
-        <li><a href="#contact" class="btn btn-primary btn-sm">Contact</a></li>
+        <li><a href={import.meta.env.BASE_URL + "caregivers/"}>For Caregivers</a></li>
+        <li><a href={import.meta.env.BASE_URL + "#about"}>About</a></li>
+        <li><a href={import.meta.env.BASE_URL + "#solution"}>Solution</a></li>
+        <li><a href={import.meta.env.BASE_URL + "#contact"} class="btn btn-primary btn-sm">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -63,18 +63,18 @@ const {
         <div class="footer-section">
           <h4>Product</h4>
           <ul>
-            <li><a href="caregivers/">For Caregivers</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#solution">Our Solution</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href={import.meta.env.BASE_URL + "caregivers/"}>For Caregivers</a></li>
+            <li><a href={import.meta.env.BASE_URL + "#about"}>About</a></li>
+            <li><a href={import.meta.env.BASE_URL + "#solution"}>Our Solution</a></li>
+            <li><a href={import.meta.env.BASE_URL + "#contact"}>Contact</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h4>Company</h4>
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#privacy">Privacy</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href={import.meta.env.BASE_URL + "#about"}>About</a></li>
+            <li><a href={import.meta.env.BASE_URL + "#privacy"}>Privacy</a></li>
+            <li><a href={import.meta.env.BASE_URL + "#contact"}>Contact</a></li>
           </ul>
         </div>
       </div>
