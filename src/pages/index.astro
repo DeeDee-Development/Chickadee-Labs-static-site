@@ -124,20 +124,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Privacy Section -->
-  <section class="section">
-    <div class="container">
-      <div class="privacy-content">
-        <h2>Privacy & Compliance</h2>
-        <p>
-          DeeDee Health takes user privacy seriously. We are committed to complying with all applicable
-          health data protection regulations, including HIPAA where applicable. Health data is processed
-          with the highest standards of security and privacy.
-        </p>
-      </div>
-    </div>
-  </section>
-
   <!-- Contact CTA -->
   <section id="contact" class="section cta-section">
     <div class="container">
@@ -363,21 +349,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: rgba(255, 255, 255, 0.95);
   }
 
-  /* Status & Privacy Sections */
-  .status-content,
-  .privacy-content {
+  /* Status Section */
+  .status-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
   }
 
-  .status-content h2,
-  .privacy-content h2 {
+  .status-content h2 {
     margin-bottom: var(--space-lg);
   }
 
-  .status-content p,
-  .privacy-content p {
+  .status-content p {
     font-size: var(--font-size-lg);
     color: var(--color-text-light);
     line-height: var(--line-height-relaxed);
