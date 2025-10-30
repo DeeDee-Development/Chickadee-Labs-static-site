@@ -8,12 +8,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <div class="hero-content">
         <div class="hero-text">
-          <h1>Empowering Independent Living Through Smart Health Monitoring</h1>
+          <h1>Prevent Falls Before They Happen</h1>
           <p class="hero-subtitle">
-            Help older adults maintain their independence while keeping their loved ones informed and at ease.
+            Smart health monitoring that detects fall risks early—giving families peace of mind and seniors the independence they deserve.
           </p>
           <div class="hero-cta">
-            <a href="#about" class="btn btn-primary btn-lg">Learn More</a>
+            <a href="#about" class="btn btn-primary btn-lg">How It Works</a>
             <a href="#contact" class="btn btn-secondary btn-lg">Get in Touch</a>
           </div>
         </div>
@@ -30,8 +30,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section id="about" class="section">
     <div class="container">
       <div class="section-header">
-        <h2>About DeeDee Health</h2>
-        <p>A mobile health monitoring application designed to help older adults maintain their independence while keeping their loved ones informed and at ease.</p>
+        <h2>Falls Don't Have to Be Inevitable</h2>
+        <p>DeeDee Health monitors the warning signs that precede falls—poor sleep, reduced mobility, declining activity—and alerts families before a fall happens, not after.</p>
       </div>
     </div>
   </section>
@@ -40,14 +40,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="section section-alt">
     <div class="container">
       <div class="challenge-content">
-        <h2>The Challenge We're Solving</h2>
+        <h2>The Problem</h2>
         <p class="challenge-text">
-          Over 90% of individuals above age 70 have experienced a severe fall and actively worry about their next one.
-          Seniors living independently often feel they must choose between their autonomy and their safety.
+          <strong>Over 90% of people above age 70 have experienced a severe fall</strong>—and live in constant fear of the next one.
+          Traditional solutions force a choice: independence or safety.
         </p>
         <p class="challenge-text">
-          Meanwhile, their family members—often part of the "sandwich generation"—juggle caring for aging parents
-          while raising their own families, constantly concerned about their parents' well-being.
+          Meanwhile, adult children juggle their own families while worrying about aging parents living alone.
+          By the time a fall happens, it's often too late to prevent serious injury.
         </p>
       </div>
     </div>
@@ -57,41 +57,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section id="solution" class="section">
     <div class="container">
       <div class="section-header">
-        <h2>Our Solution</h2>
-        <p>DeeDee Health bridges the gap between independence and safety</p>
+        <h2>How We Prevent Falls</h2>
+        <p>Early detection of the warning signs that precede falls</p>
       </div>
 
       <div class="grid grid-2">
         <div class="card feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>Monitoring Critical Health Indicators</h3>
-          <p>Track health signals that may indicate fall risks or health concerns</p>
+          <div class="feature-icon">🚶</div>
+          <h3>Track Mobility Changes</h3>
+          <p>Detect declining walking patterns and reduced movement before they lead to falls</p>
         </div>
 
         <div class="card feature-card">
-          <div class="feature-icon">🔔</div>
-          <h3>Alerting Family Networks</h3>
-          <p>Real-time notifications when health patterns suggest intervention may be needed</p>
+          <div class="feature-icon">😴</div>
+          <h3>Monitor Sleep Quality</h3>
+          <p>Poor sleep dramatically increases fall risk—we catch consecutive bad nights early</p>
         </div>
 
         <div class="card feature-card">
           <div class="feature-icon">⚡</div>
-          <h3>Enabling Proactive Care</h3>
-          <p>Respond before emergencies occur with early warning signals</p>
+          <h3>Measure Energy & Fatigue</h3>
+          <p>Fatigue is a major fall predictor—track energy levels to identify high-risk periods</p>
         </div>
 
         <div class="card feature-card">
-          <div class="feature-icon">🏡</div>
-          <h3>Preserving Independence</h3>
-          <p>Seniors can live on their own terms, knowing loved ones are watching out for them</p>
+          <div class="feature-icon">🔔</div>
+          <h3>Alert Families Early</h3>
+          <p>Notify loved ones when patterns suggest increased fall risk—before an incident occurs</p>
         </div>
       </div>
 
       <div class="solution-description">
         <p>
-          The app analyzes health-related data from your device and notifies your designated support network
-          when concerning patterns emerge—such as consecutive nights of poor sleep or other health indicators
-          that warrant attention.
+          DeeDee analyzes health data from Apple Watch and iPhone to identify patterns that precede falls.
+          When we detect concerning trends—like declining mobility, poor sleep, or reduced activity—we alert
+          your family so they can intervene before a fall happens.
         </p>
       </div>
     </div>
@@ -101,11 +101,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="section mission-section">
     <div class="container">
       <div class="mission-content">
-        <h2>Our Mission</h2>
+        <h2>Independence Without Fear</h2>
         <p>
-          We believe aging adults shouldn't have to sacrifice their independence for safety.
-          DeeDee Health provides peace of mind for both seniors and their families, enabling
-          independent living with a reliable safety net.
+          Seniors shouldn't have to choose between living independently and staying safe.
+          DeeDee provides the safety net that lets families sleep soundly—knowing they'll be alerted
+          to fall risks before tragedy strikes.
         </p>
       </div>
     </div>
@@ -312,6 +312,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .challenge-content h2 {
     margin-bottom: var(--space-xl);
+    font-size: var(--font-size-3xl);
   }
 
   .challenge-text {
@@ -319,6 +320,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-text);
     margin-bottom: var(--space-lg);
     line-height: var(--line-height-relaxed);
+  }
+
+  .challenge-text strong {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
   }
 
   /* Solution Description */
