@@ -42,7 +42,7 @@ public/               # Static assets
 ```
 
 ## GitHub Pages Configuration
-- **Site URL**: https://yaakovbressler.github.io/Chickadee-Labs-static-site
+- **Site URL**: https://deedee-development.github.io/Chickadee-Labs-static-site
 - **Base path**: `/Chickadee-Labs-static-site` (configured in astro.config.mjs)
 - **Deployment**: Automatic via GitHub Actions on push to main branch
 
@@ -73,4 +73,4 @@ The site automatically deploys to GitHub Pages when you push to the main branch.
 2. Under "Build and deployment" > Source: Select "GitHub Actions"
 3. The workflow will run automatically on next push
 
-Site will be live at: https://yaakovbressler.github.io/Chickadee-Labs-static-site
+Site will be live at: https://deedee-development.github.io/Chickadee-Labs-static-site
