@@ -2,11 +2,13 @@
 interface Props {
   title?: string;
   description?: string;
+  simpleNav?: boolean;
 }
 
 const {
   title = "DeeDee Health - Family Health Monitoring Made Simple",
-  description = "Keep your family healthy and safe with DeeDee. Monitor health signals that matter most and get alerts before small issues become big problems."
+  description = "Keep your family healthy and safe with DeeDee. Monitor health signals that matter most and get alerts before small issues become big problems.",
+  simpleNav = false
 } = Astro.props;
 ---
 
@@ -38,12 +40,14 @@ const {
       <a href={import.meta.env.BASE_URL} class="logo">
         <span class="logo-text">DeeDee Health</span>
       </a>
-      <ul class="nav-links">
-        <li><a href={import.meta.env.BASE_URL + "caregivers/"}>For Caregivers</a></li>
-        <li><a href={import.meta.env.BASE_URL + "#about"}>About</a></li>
-        <li><a href={import.meta.env.BASE_URL + "#solution"}>Solution</a></li>
-        <li><a href={import.meta.env.BASE_URL + "#contact"} class="btn btn-primary btn-sm">Contact</a></li>
-      </ul>
+      {!simpleNav && (
+        <ul class="nav-links">
+          <li><a href={import.meta.env.BASE_URL + "caregivers/"}>For Caregivers</a></li>
+          <li><a href={import.meta.env.BASE_URL + "#about"}>About</a></li>
+          <li><a href={import.meta.env.BASE_URL + "#solution"}>Solution</a></li>
+          <li><a href={import.meta.env.BASE_URL + "#contact"} class="btn btn-primary btn-sm">Contact</a></li>
+        </ul>
+      )}
     </nav>
   </header>
 
