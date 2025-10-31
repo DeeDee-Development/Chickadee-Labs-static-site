@@ -42,8 +42,8 @@ public/               # Static assets
 ```
 
 ## GitHub Pages Configuration
-- **Site URL**: https://deedee-development.github.io/Chickadee-Labs-static-site
-- **Base path**: `/Chickadee-Labs-static-site` (configured in astro.config.mjs)
+- **Site URL**: https://chickadee.family (custom domain)
+- **Base path**: Not needed for custom domains
 - **Deployment**: Automatic via GitHub Actions on push to main branch
 
 ## Development Notes
@@ -71,6 +71,7 @@ The site automatically deploys to GitHub Pages when you push to the main branch.
 **First-time setup**: Enable GitHub Pages in repository settings:
 1. Go to Settings > Pages
 2. Under "Build and deployment" > Source: Select "GitHub Actions"
-3. The workflow will run automatically on next push
+3. Configure custom domain: chickadee.family (creates CNAME file)
+4. The workflow will run automatically on next push
 
-Site will be live at: https://deedee-development.github.io/Chickadee-Labs-static-site
+Site is live at: https://chickadee.family

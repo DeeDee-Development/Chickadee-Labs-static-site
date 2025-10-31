@@ -15,4 +15,4 @@ npm run preview      # Preview production build
 
 The site automatically deploys to GitHub Pages when you push to the main branch.
 
-**Live URL**: https://deedee-development.github.io/Chickadee-Labs-static-site
+**Live URL**: https://chickadee.family
