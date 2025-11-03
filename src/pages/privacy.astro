@@ -4,26 +4,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Privacy Policy - Chickadee Health"
-  description="Privacy Policy for Chickadee Health - How we collect, use, and protect your health data."
+  description="Privacy Policy for Chickadee Health - Your health data stays on your device. We only store contact information for SMS notifications."
 >
   <div class="legal-page">
     <div class="container">
       <div class="legal-content">
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last Updated: October 30, 2025</p>
+        <p class="last-updated">Last Updated: January 15, 2025</p>
 
         <section class="legal-section">
           <h2>Introduction</h2>
           <p>
-            Chickadee Health ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your health information when you use our iOS mobile application and services.
+            Chickadee Health ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our iOS mobile application and services.
+          </p>
+          <p>
+            <strong>Key Privacy Principle:</strong> Your health data stays on your device. We only store contact information on our servers to enable SMS notifications to your family members.
           </p>
         </section>
 
         <section class="legal-section">
           <h2>Health Data Collection and Use</h2>
-          <h3>What We Collect from Apple HealthKit</h3>
+          <h3>What We Access from Apple HealthKit</h3>
           <p>
-            Our app collects the following types of health data from Apple HealthKit with your explicit permission:
+            Our app reads the following types of health data from Apple HealthKit with your explicit permission:
           </p>
           <ul>
             <li>Heart rate and heart rate variability</li>
@@ -34,7 +37,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           <h3>How We Use Your Health Data</h3>
           <p>
-            We analyze your health data to:
+            <strong>Important: We do not store your health data on our servers.</strong> All health data remains securely on your device within Apple's HealthKit. Our app analyzes your health data locally on your iPhone to:
           </p>
           <ul>
             <li>Detect patterns that may indicate increased fall risk or health concerns</li>
@@ -43,7 +46,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </ul>
 
           <p>
-            <strong>Your health data remains private and is never sold, shared with third parties for marketing purposes, or used for any purpose other than providing our health monitoring service to you.</strong>
+            <strong>Your health data never leaves your device.</strong> We only transmit notifications to family members when the app detects concerning patterns. These notifications may include general health observations (like "sleep has been declining") but never contain specific measurements, exact numbers, or detailed health data.
           </p>
         </section>
 
@@ -51,7 +54,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h2>SMS Notifications</h2>
           <h3>How SMS Alerts Work</h3>
           <p>
-            When you add family members to your health monitoring network, they will receive SMS text message alerts when our app detects concerning health patterns. These alerts help your loved ones know when to check in with you.
+            When you add family members to your health monitoring network, they will receive SMS text message alerts when our app detects concerning health patterns. These alerts may include general observations (such as "sleep has been declining" or "activity is lower than usual") but will not include specific measurements, exact numbers, or detailed health data. These alerts help your loved ones know when to check in with you.
           </p>
 
           <h3>Phone Number Privacy - Required Disclosure</h3>
@@ -74,26 +77,49 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </section>
 
         <section class="legal-section">
-          <h2>Data Security and HIPAA Considerations</h2>
-          <h3>How We Protect Your Data</h3>
+          <h2>Data Security and What We Store</h2>
+          <h3>What Information We Store on Our Servers</h3>
           <p>
-            We take data security seriously and implement industry-standard measures to protect your information:
+            We store only the following contact information on our servers:
           </p>
           <ul>
-            <li>All health data is encrypted in transit and at rest</li>
+            <li>Your name and phone number</li>
+            <li>Family members' names and phone numbers (for SMS notifications)</li>
+            <li>Basic account information (email, account preferences)</li>
+          </ul>
+          <p>
+            <strong>We do not store any health data on our servers.</strong> All health metrics, measurements, and patterns remain securely on your device within Apple HealthKit.
+          </p>
+
+          <h3>How We Protect Your Contact Information</h3>
+          <p>
+            We implement industry-standard security measures to protect your contact information:
+          </p>
+          <ul>
+            <li>All data is encrypted in transit using secure HTTPS connections</li>
+            <li>Contact information is encrypted at rest on our servers</li>
             <li>We use secure, authenticated connections for all data transmission</li>
-            <li>Access to your data is strictly limited to authorized systems needed to provide our service</li>
+            <li>Access to your data is strictly limited to authorized systems needed to provide our SMS notification service</li>
             <li>We conduct regular security audits and updates</li>
           </ul>
 
           <h3>SMS Messages and Protected Health Information (PHI)</h3>
           <p>
-            <strong>Important:</strong> We do not send Protected Health Information (PHI) via SMS text messages. Our SMS alerts contain only general notifications (such as "concerning health pattern detected") and do not include specific medical data, diagnoses, or detailed health metrics. Detailed information is only available within the secure Chickadee Health app.
+            <strong>Important:</strong> We do not send sensitive health data or measurements via SMS text messages. Our SMS alerts may include general health observations (such as "sleep has been declining" or "activity levels are lower than usual") but will never include:
+          </p>
+          <ul>
+            <li>Specific health measurements or numeric values (heart rate, step counts, etc.)</li>
+            <li>Medical diagnoses or conditions</li>
+            <li>Detailed health metrics or data points</li>
+            <li>Protected Health Information (PHI) as defined by HIPAA</li>
+          </ul>
+          <p>
+            SMS messages are limited to high-level observations and alerts to notify family members when they should check in with you.
           </p>
 
-          <h3>HIPAA Compliance</h3>
+          <h3>HIPAA Considerations</h3>
           <p>
-            Chickadee Health is committed to complying with applicable health data protection regulations. While we handle health information with the highest standards of care, we are not a covered entity under HIPAA. However, we implement HIPAA-aligned security practices to protect your health data.
+            Because we do not store health data on our servers, we are not a covered entity under HIPAA. Your health data remains on your device and is protected by Apple's HealthKit security framework. The contact information we store is handled with the highest standards of data security.
           </p>
         </section>
 
@@ -104,7 +130,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             You have the right to:
           </p>
           <ul>
-            <li><strong>Access your data:</strong> View all health data collected through the app at any time</li>
+            <li><strong>Access your health data:</strong> View all health data through Apple's Health app on your iPhone - this data is stored on your device, not our servers</li>
+            <li><strong>Access your contact information:</strong> View and edit your contact information and family member contacts in the app at any time</li>
             <li><strong>Revoke permissions:</strong> Disconnect HealthKit access through your iPhone Settings</li>
             <li><strong>Update family network:</strong> Add or remove family members from SMS alerts</li>
             <li><strong>Opt out of SMS:</strong> You or your family members can stop receiving SMS alerts by replying STOP</li>
@@ -112,27 +139,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           <h3>Data Deletion</h3>
           <p>
-            You can request deletion of your account and all associated data at any time by:
+            You can request deletion of your account and all associated contact information at any time by:
           </p>
           <ul>
             <li>Using the "Delete Account" option in the app settings, or</li>
             <li>Contacting us at <a href="mailto:privacy@chickadee.family">privacy@chickadee.family</a></li>
           </ul>
           <p>
-            Upon deletion, we will permanently remove all your health data, account information, and SMS notification preferences within 30 days. Note that some data may be retained for a limited time as required by law or for legitimate business purposes (such as fraud prevention).
+            Upon deletion, we will permanently remove all your contact information, account details, and SMS notification preferences from our servers within 30 days. Your health data remains on your device in Apple HealthKit and is not affected by account deletion. Note that some contact data may be retained for a limited time as required by law or for legitimate business purposes (such as fraud prevention).
           </p>
         </section>
 
         <section class="legal-section">
           <h2>Data Sharing and Third Parties</h2>
           <p>
-            We do not sell your data. We only share your information in the following limited circumstances:
+            We do not sell your data. We only share information in the following limited circumstances:
           </p>
           <ul>
-            <li><strong>Family members you designate:</strong> General health alerts (not detailed PHI) via SMS</li>
-            <li><strong>Service providers:</strong> Trusted partners who help us operate our service (such as cloud hosting and SMS delivery), who are contractually bound to protect your data and use it only for providing services to us</li>
+            <li><strong>Family members you designate:</strong> General health observations via SMS (such as "sleep has been declining") - never specific measurements or detailed health data</li>
+            <li><strong>SMS service providers:</strong> Trusted partners who help us deliver SMS notifications, who only have access to phone numbers and the general notification messages we send, and who are contractually bound to protect your data and use it only for providing services to us</li>
             <li><strong>Legal requirements:</strong> When required by law, such as in response to valid legal processes</li>
           </ul>
+          <p>
+            <strong>Your specific health data and measurements are never shared with anyone</strong> because they never leave your device. Only contact information and general health observations (without specific numbers or measurements) are transmitted to our servers for SMS delivery.
+          </p>
         </section>
 
         <section class="legal-section">
