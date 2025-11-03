@@ -1,0 +1,22 @@
+---
+// Redirect /messages to /sms-opt-in/
+const redirectTo = '/sms-opt-in/';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content={`0; url=${redirectTo}`}>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+</head>
+<body>
+  <p>Redirecting to <a href={redirectTo}>SMS Opt-In</a>...</p>
+
+  <script is:inline>
+    // JavaScript fallback for instant redirect
+    window.location.href = "/sms-opt-in/";
+  </script>
+</body>
+</html>

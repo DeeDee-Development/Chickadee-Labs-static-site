@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/sms-opt-in.css';
+---
+
+<BaseLayout
+  title="SMS Opt-In - DeeDee Health"
+  description="Opt in to receive health alerts from your family and friends via text message."
+  simpleNav={true}
+>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Stay Connected to Your Loved Ones</h1>
+        <p class="hero-subtitle">
+          Get timely health alerts about your family member—delivered right to your phone.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="section form-section">
+    <div class="container">
+      <div class="form-container">
+        <div class="form-card card">
+          <div class="form-header">
+            <div class="icon-badge">📱</div>
+            <h2>Opt In to SMS Alerts</h2>
+            <p class="form-description">
+              Before you can receive health alerts about your family member, we need your permission to text you.
+            </p>
+          </div>
+
+          <form id="sms-opt-in-form" class="opt-in-form">
+            <!-- Phone Number Input -->
+            <div class="form-group">
+              <label for="phone" class="form-label">
+                Phone Number
+              </label>
+              <div class="phone-input-wrapper">
+                <div class="country-code-input">
+                  <span id="country-flag" class="country-flag">🇺🇸</span>
+                  <input
+                    type="text"
+                    id="country-code"
+                    name="country-code"
+                    class="country-code-field"
+                    value="+1"
+                    placeholder="+1"
+                    maxlength="5"
+                    required
+                    autocomplete="off"
+                  />
+                  <button type="button" class="country-dropdown-trigger" id="country-dropdown-btn" aria-label="Select country code">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                      <path d="M6 9L1 4h10z"/>
+                    </svg>
+                  </button>
+                  <div class="country-dropdown" id="country-dropdown" style="display: none;">
+                    <div class="country-dropdown-content"></div>
+                  </div>
+                </div>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-input phone-input"
+                  placeholder="555 123 4567"
+                  required
+                  autocomplete="tel"
+                />
+              </div>
+              <span class="form-error" id="phone-error"></span>
+            </div>
+
+            <!-- Consent Checkbox -->
+            <div class="form-group consent-group">
+              <label class="checkbox-label">
+                <input
+                  type="checkbox"
+                  id="consent"
+                  name="consent"
+                  class="checkbox-input"
+                  required
+                />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-text">
+                  I agree to receive SMS text messages from DeeDee Health about my family member's health status, including alerts and notifications. Message and data rates may apply. I understand I can reply STOP to opt out at any time.
+                </span>
+              </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-lg btn-full">
+              Enable SMS Alerts
+            </button>
+
+            <!-- Privacy Notice -->
+            <div class="privacy-notice">
+              <p>
+                By opting in, you consent to receive automated health alerts about your family member via SMS. Standard message and data rates may apply. Reply STOP to unsubscribe or HELP for assistance at any time. View our <a href="/privacy/">Privacy Policy</a>.
+              </p>
+            </div>
+          </form>
+
+          <!-- Success State (hidden by default) -->
+          <div id="success-message" class="success-message" style="display: none;">
+            <div class="success-icon">✓</div>
+            <h3>You're All Set!</h3>
+            <p>
+              We've received your opt-in. You'll now receive health alerts about your family member at the phone number you provided.
+            </p>
+            <p class="success-note">
+              To stop receiving messages, reply STOP to any text message from us.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { initializeSMSOptInForm } from '../scripts/sms-opt-in.ts';
+
+    // Wait for DOM to be ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeSMSOptInForm);
+    } else {
+      initializeSMSOptInForm();
+    }
+  </script>
+</BaseLayout>
