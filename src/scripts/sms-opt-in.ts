@@ -450,7 +450,7 @@ export function initializeSMSOptInForm(): void {
   });
 
   // Handle form submission
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const countryCode = countryCodeInput.value;
