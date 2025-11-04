@@ -458,24 +458,38 @@
   margin: 0;
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive - Fluid system handles most scaling */
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: var(--font-size-3xl);
+  /* Optimize country code section for mobile */
+  .country-code-input {
+    padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.375rem, 0.8vw, 0.5rem);
+    gap: clamp(2px, 0.3vw, 4px);
   }
 
-  .hero-subtitle {
-    font-size: var(--font-size-lg);
+  .country-flag {
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
+    min-width: clamp(1.125rem, 3vw, 1.5rem);
   }
 
-  .form-card {
-    padding: var(--space-lg);
+  .country-code-field {
+    width: clamp(2.25rem, 6vw, 3rem);
+    font-size: var(--font-size-sm);
   }
 
+  .country-dropdown-trigger {
+    padding: clamp(0.125rem, 0.3vw, 0.25rem);
+  }
+
+  .country-dropdown-trigger svg {
+    width: clamp(8px, 2.5vw, 12px);
+    height: clamp(8px, 2.5vw, 12px);
+  }
+
+  /* Icon badge scales with viewport */
   .icon-badge {
-    width: 64px;
-    height: 64px;
-    font-size: 2rem;
+    width: clamp(56px, 15vw, 80px);
+    height: clamp(56px, 15vw, 80px);
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
   }
 
   .info-grid {

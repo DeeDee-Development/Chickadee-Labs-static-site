@@ -97,6 +97,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- SMS Alerts Setup Section -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="sms-setup-content">
+        <div class="icon-badge-large">📱</div>
+        <h2>Get Health Alerts via Text</h2>
+        <p class="sms-description">
+          Stay connected to your loved one's health status with SMS notifications.
+          When we detect fall risk patterns, we'll send you a timely text alert so you can reach out and help.
+        </p>
+        <a href="/sms-opt-in/" class="btn btn-primary btn-lg">Set Up SMS Alerts</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Mission Section -->
   <section class="section mission-section">
     <div class="container">
@@ -366,24 +381,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     line-height: var(--line-height-relaxed);
   }
 
-  /* Mobile Responsive */
+  /* SMS Alerts Setup Section */
+  .sms-setup-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .icon-badge-large {
+    font-size: var(--font-size-5xl);
+    margin-bottom: var(--space-lg);
+  }
+
+  .sms-setup-content h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .sms-description {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-xl);
+  }
+
+  /* Mobile Responsive - Fluid system handles most scaling */
   @media (max-width: 768px) {
     .hero {
-      padding: var(--space-2xl) 0;
       min-height: auto;
     }
 
     .hero-content {
       grid-template-columns: 1fr;
-      gap: var(--space-xl);
-    }
-
-    .hero h1 {
-      font-size: var(--font-size-3xl);
-    }
-
-    .hero-subtitle {
-      font-size: var(--font-size-lg);
     }
 
     .hero-image {
@@ -391,25 +419,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     .app-icon {
-      width: 200px;
-      height: 200px;
+      width: clamp(180px, 45vw, 300px);
+      height: clamp(180px, 45vw, 300px);
     }
 
     .step {
-      grid-template-columns: 60px 1fr;
-      gap: var(--space-md);
+      grid-template-columns: clamp(48px, 15vw, 80px) 1fr;
     }
 
     .step-number {
-      width: 48px;
-      height: 48px;
+      width: clamp(48px, 15vw, 64px);
+      height: clamp(48px, 15vw, 64px);
       font-size: var(--font-size-xl);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .hero h1 {
-      font-size: 4rem;
     }
   }
 </style>
