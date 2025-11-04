@@ -538,7 +538,16 @@ export function initializeSMSOptInForm(): void {
       successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } catch (error) {
       // Show error to user
-      const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred. Please try again.';
+      let errorMessage = 'An unexpected error occurred. Please try again.';
+
+      if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
+        // Connection refused - CORS or network error
+        errorMessage = 'Connection refused. DeeDee backend API security is prohibiting traffic from you.';
+      } else if (error instanceof Error) {
+        errorMessage = error.message;
+      }
+
+      console.error('SMS Opt-In Error:', error);
       phoneError.textContent = errorMessage;
       phoneError.classList.add('visible');
       phoneWrapper.classList.add('error');
