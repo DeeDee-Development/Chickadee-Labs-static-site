@@ -1,4 +1,5 @@
 ---
+import { SEO } from 'astro-seo';
 import { generateAllThemesCSS } from '../config/colors';
 import '../styles/global.css';
 
@@ -12,16 +13,26 @@ interface Props {
   title?: string;
   description?: string;
   simpleNav?: boolean;
+  image?: string;
+  noindex?: boolean;
 }
 
 const {
-  title = "DeeDee Health - Family Health Monitoring Made Simple",
-  description = "Keep your family healthy and safe with DeeDee. Monitor health signals that matter most and get alerts before small issues become big problems.",
-  simpleNav = false
+  title = "Prevent Falls Before They Happen | DeeDee Health - Apple Watch App",
+  description = "DeeDee uses Apple Watch biometrics to detect fall risks early. Monitor sleep, mobility, and activity patterns to prevent falls before they happen. Peace of mind for families.",
+  simpleNav = false,
+  image = "/og-image.png",
+  noindex = false
 } = Astro.props;
 
 // Generate CSS for all themes
 const themesCSS = generateAllThemesCSS();
+
+// Get the canonical URL
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+
+// Default OG image
+const ogImageURL = new URL(image, Astro.site).href;
 ---
 
 <!DOCTYPE html>
@@ -29,8 +40,47 @@ const themesCSS = generateAllThemesCSS();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content={description}>
-  <title>{title}</title>
+
+  <!-- SEO Meta Tags -->
+  <SEO
+    title={title}
+    description={description}
+    canonical={canonicalURL}
+    noindex={noindex}
+    nofollow={noindex}
+    openGraph={{
+      basic: {
+        title: title,
+        type: "website",
+        image: ogImageURL,
+        url: canonicalURL,
+      },
+      optional: {
+        description: description,
+        siteName: "DeeDee Health",
+      },
+      image: {
+        alt: "DeeDee Health - Fall Prevention for Seniors",
+      },
+    }}
+    twitter={{
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      image: ogImageURL,
+      imageAlt: "DeeDee Health - Apple Watch Fall Prevention",
+    }}
+    extend={{
+      meta: [
+        { name: "theme-color", content: "#F5A623" },
+        { name: "apple-mobile-web-app-capable", content: "yes" },
+        { name: "apple-mobile-web-app-status-bar-style", content: "default" },
+      ],
+      link: [
+        { rel: "sitemap", href: "/sitemap-index.xml" },
+      ],
+    }}
+  />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href={import.meta.env.BASE_URL + "favicon.png"}>
