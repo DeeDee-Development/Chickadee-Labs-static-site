@@ -478,23 +478,75 @@ export function initializeSMSOptInForm(): void {
 
     // Get form data
     const consentInput = document.getElementById('consent') as HTMLInputElement | null;
-    const formData = {
-      countryCode: countryCode,
-      phone: phoneValue,
-      fullPhone: `${countryCode} ${phoneValue}`,
-      consent: consentInput?.checked ?? false,
-      timestamp: new Date().toISOString()
-    };
+    const consent = consentInput?.checked ?? false;
 
-    // TODO: Send to backend API when implemented
-    console.log('SMS Opt-In submitted:', formData);
+    // Disable submit button and show loading state
+    const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Processing...';
+    }
 
-    // Show success message
-    formCard.style.display = 'none';
-    successMessage.style.display = 'block';
+    // Determine API URL based on environment
+    const apiUrl = getApiUrl();
 
-    // Scroll to success message
-    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    try {
+      // Send to backend API
+      const response = await fetch(`${apiUrl}/api/v1/sms/opt-in`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          country_code: countryCode,
+          phone: phoneValue,
+          consent: consent
+        })
+      });
+
+      if (!response.ok) {
+        // Handle HTTP errors
+        if (response.status === 429) {
+          throw new Error('Too many requests. Please try again in a few minutes.');
+        }
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || `Server error (${response.status})`);
+      }
+
+      const data = await response.json();
+      console.log('SMS Opt-In success:', data);
+
+      // Show success message
+      formCard.style.display = 'none';
+      successMessage.style.display = 'block';
+
+      // Scroll to success message
+      successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } catch (error) {
+      // Show error to user
+      const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred. Please try again.';
+      phoneError.textContent = errorMessage;
+      phoneError.classList.add('visible');
+      phoneWrapper.classList.add('error');
+
+      // Re-enable submit button
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Enable SMS Alerts';
+      }
+    }
   });
 }
 
+/**
+ * Get API URL based on environment
+ */
+export function getApiUrl(): string {
+  // For local development
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    return 'http://localhost:8000';
+  }
+
+  // For production - Cloud Run URL
+  return import.meta.env.PUBLIC_API_URL || 'https://deedee-health-backend-291940511306.us-east4.run.app';
+}
