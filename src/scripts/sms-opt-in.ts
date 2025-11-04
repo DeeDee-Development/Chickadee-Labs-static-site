@@ -489,19 +489,32 @@ export function initializeSMSOptInForm(): void {
 
     // Determine API URL based on environment
     const apiUrl = getApiUrl();
+    const endpoint = `${apiUrl}/api/v1/sms/opt-in`;
+    const payload = {
+      country_code: countryCode,
+      phone: phoneValue,
+      consent: consent
+    };
+
+    console.log('SMS Opt-In Request:', {
+      endpoint,
+      payload
+    });
 
     try {
       // Send to backend API
-      const response = await fetch(`${apiUrl}/api/v1/sms/opt-in`, {
+      const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          country_code: countryCode,
-          phone: phoneValue,
-          consent: consent
-        })
+        body: JSON.stringify(payload)
+      });
+
+      console.log('SMS Opt-In Response:', {
+        status: response.status,
+        statusText: response.statusText,
+        headers: Object.fromEntries(response.headers.entries())
       });
 
       if (!response.ok) {
@@ -510,11 +523,12 @@ export function initializeSMSOptInForm(): void {
           throw new Error('Too many requests. Please try again in a few minutes.');
         }
         const errorData = await response.json().catch(() => ({}));
+        console.error('SMS Opt-In Error:', errorData);
         throw new Error(errorData.message || `Server error (${response.status})`);
       }
 
       const data = await response.json();
-      console.log('SMS Opt-In success:', data);
+      console.log('SMS Opt-In Success - Response Data:', data);
 
       // Show success message
       formCard.style.display = 'none';
