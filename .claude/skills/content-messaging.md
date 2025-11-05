@@ -1,6 +1,6 @@
 # Content & Messaging Skill
 
-Use this skill when writing copy for the Chickadee Labs / DeeDee static site.
+Use this skill when writing copy for the Chickadee Labs / Chickadee static site.
 
 ## Core Messaging Principles
 
@@ -63,7 +63,7 @@ Friendly and approachable, but serious about health. This is about caring for lo
 ## Messaging Themes
 
 ### Family-Centered Care
-DeeDee is about **proactive family health monitoring**. Emphasize the peace of mind for adult children caring for aging parents.
+Chickadee is about **proactive family health monitoring**. Emphasize the peace of mind for adult children caring for aging parents.
 
 **Key Messages**:
 - "Check in on Mom without being intrusive"
@@ -131,12 +131,12 @@ Complex health monitoring made effortless. No medical expertise required.
 ### Educational (Secondary Tone)
 *Use when explaining how things work*
 
-"DeeDee analyzes five key health areas: how much you're walking, your daily activity, how well you're sleeping, your heart rate and breathing, and your energy levels. Each area gets a simple status: green (good), yellow (check it out), or red (needs attention)."
+"Chickadee analyzes five key health areas: how much you're walking, your daily activity, how well you're sleeping, your heart rate and breathing, and your energy levels. Each area gets a simple status: green (good), yellow (check it out), or red (needs attention)."
 
 ### Empowering (Call to Action)
 *Use for CTAs and conversion moments*
 
-"Download DeeDee today and get peace of mind knowing your family's health is being watched—so you can focus on what matters most."
+"Download Chickadee today and get peace of mind knowing your family's health is being watched—so you can focus on what matters most."
 
 ## Avoid These Patterns
 

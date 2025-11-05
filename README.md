@@ -1,6 +1,6 @@
 # Chickadee-Labs-static-site
 
-A clean, minimal static website built with Astro for DeeDee Health.
+A clean, minimal static website built with Astro for Chickadee Health.
 
 ## Development
 

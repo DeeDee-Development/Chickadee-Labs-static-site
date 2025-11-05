@@ -1,5 +1,5 @@
 /**
- * DeeDee Health Color Palettes
+ * Chickadee Health Color Palettes
  *
  * Centralized color configuration for the entire site.
  * Inspired by the chickadee logo and health-focused design systems.
