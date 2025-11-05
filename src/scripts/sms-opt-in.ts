@@ -542,7 +542,7 @@ export function initializeSMSOptInForm(): void {
 
       if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
         // Connection refused - CORS or network error
-        errorMessage = 'Connection refused. DeeDee backend API security is prohibiting traffic from you.';
+        errorMessage = 'Connection refused. Chickadee backend API security is prohibiting traffic from you.';
       } else if (error instanceof Error) {
         errorMessage = error.message;
       }
@@ -571,5 +571,5 @@ export function getApiUrl(): string {
   }
 
   // For production - Cloud Run URL
-  return import.meta.env.PUBLIC_API_URL || 'https://deedee-health-backend-291940511306.us-east4.run.app';
+  return import.meta.env.PUBLIC_API_URL || 'https://chickadee-health-backend-291940511306.us-east4.run.app';
 }

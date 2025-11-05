@@ -18,8 +18,8 @@ interface Props {
 }
 
 const {
-  title = "Prevent Falls Before They Happen | DeeDee Health - Apple Watch App",
-  description = "DeeDee uses Apple Watch biometrics to detect fall risks early. Monitor sleep, mobility, and activity patterns to prevent falls before they happen. Peace of mind for families.",
+  title = "Prevent Falls Before They Happen | Chickadee Health - Apple Watch App",
+  description = "Chickadee uses Apple Watch biometrics to detect fall risks early. Monitor sleep, mobility, and activity patterns to prevent falls before they happen. Peace of mind for families.",
   simpleNav = false,
   image = "/og-image.png",
   noindex = false
@@ -57,10 +57,10 @@ const ogImageURL = new URL(image, Astro.site).href;
       },
       optional: {
         description: description,
-        siteName: "DeeDee Health",
+        siteName: "Chickadee Health",
       },
       image: {
-        alt: "DeeDee Health - Fall Prevention for Seniors",
+        alt: "Chickadee Health - Fall Prevention for Seniors",
       },
     }}
     twitter={{
@@ -68,7 +68,7 @@ const ogImageURL = new URL(image, Astro.site).href;
       title: title,
       description: description,
       image: ogImageURL,
-      imageAlt: "DeeDee Health - Apple Watch Fall Prevention",
+      imageAlt: "Chickadee Health - Apple Watch Fall Prevention",
     }}
     extend={{
       meta: [
@@ -98,7 +98,7 @@ const ogImageURL = new URL(image, Astro.site).href;
   <header class="header">
     <nav class="container nav">
       <a href={import.meta.env.BASE_URL} class="logo">
-        <span class="logo-text">DeeDee Health</span>
+        <span class="logo-text">Chickadee Health</span>
       </a>
       {!simpleNav && (
         <ul class="nav-links">
@@ -121,7 +121,7 @@ const ogImageURL = new URL(image, Astro.site).href;
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h4>DeeDee Health</h4>
+          <h4>Chickadee Health</h4>
           <p>Peace of mind for your family's health</p>
         </div>
         <div class="footer-section">
@@ -145,7 +145,7 @@ const ogImageURL = new URL(image, Astro.site).href;
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 DeeDee Health. All rights reserved.</p>
+        <p>&copy; 2025 Chickadee Health. All rights reserved.</p>
       </div>
     </div>
   </footer>
