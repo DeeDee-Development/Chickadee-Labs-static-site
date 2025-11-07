@@ -97,7 +97,7 @@ const ogImageURL = new URL(image, Astro.site).href;
   <!-- Header -->
   <header class="header">
     <nav class="container nav">
-      <a href={import.meta.env.BASE_URL} class="logo">
+      <a href={import.meta.env.BASE_URL} class="logo" id="logo-link">
         <img src={import.meta.env.BASE_URL + "favicon.png"} alt="Chickadee Health Icon" class="logo-icon" />
         <span class="logo-text">Chickadee Health</span>
       </a>
@@ -179,6 +179,18 @@ const ogImageURL = new URL(image, Astro.site).href;
       width: 36px;
       height: 36px;
       object-fit: contain;
+      transition: transform 0.1s ease;
+    }
+
+    /* Cute wiggle animation */
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-5deg); }
+      75% { transform: rotate(5deg); }
+    }
+
+    .logo.wiggle .logo-icon {
+      animation: wiggle 0.5s ease-in-out;
     }
 
     .logo-text {
@@ -279,5 +291,24 @@ const ogImageURL = new URL(image, Astro.site).href;
       }
     }
   </style>
+
+  <script>
+    // Cute logo wiggle on click
+    document.addEventListener('DOMContentLoaded', () => {
+      const logo = document.getElementById('logo-link');
+      if (logo) {
+        logo.addEventListener('click', (e) => {
+          // Only trigger animation if we're already on the homepage
+          if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+            e.preventDefault();
+            logo.classList.add('wiggle');
+            setTimeout(() => {
+              logo.classList.remove('wiggle');
+            }, 500);
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
