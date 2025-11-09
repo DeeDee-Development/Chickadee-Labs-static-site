@@ -561,6 +561,7 @@ export function initializeSMSOptInForm(): void {
   });
 }
 
+
 /**
  * Get API URL based on environment
  */
