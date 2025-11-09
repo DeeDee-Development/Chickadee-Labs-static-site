@@ -530,20 +530,34 @@ export function initializeSMSOptInForm(): void {
       const data = await response.json();
       console.log('SMS Opt-In Success - Response Data:', data);
 
+      // Check if this phone number was previously submitted
+      const phoneKey = `sms_opt_in_${data.phone_number}`;
+      const wasSubmittedBefore = localStorage.getItem(phoneKey) === data.consent_status;
+
       // Update success message based on consent status
       const titleElement = successMessage.querySelector('h3');
       const messageElement = successMessage.querySelector('p:first-of-type');
 
       if (titleElement && messageElement) {
         if (data.consent_status === 'opted_in') {
-          titleElement.textContent = "You're All Set!";
-          messageElement.textContent = "You'll receive health alerts about your family member at the phone number you provided.";
+          if (wasSubmittedBefore) {
+            // Returning user - already opted in
+            titleElement.textContent = "Hello Again!";
+            messageElement.textContent = "You opted in previously. You're still enrolled for SMS health alerts at the number you provided.";
+          } else {
+            // First time opting in (or changing from opted out)
+            titleElement.textContent = "You're All Set!";
+            messageElement.textContent = "You'll receive health alerts about your family member at the phone number you provided.";
+          }
         } else {
           // Opted out
           titleElement.textContent = "Preferences Updated";
           messageElement.textContent = "You've successfully opted out of SMS alerts. You won't receive any messages from us.";
         }
       }
+
+      // Store this submission in localStorage for future visits
+      localStorage.setItem(phoneKey, data.consent_status);
 
       // Show success message
       formCard.style.display = 'none';
