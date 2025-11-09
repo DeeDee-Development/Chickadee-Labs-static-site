@@ -530,6 +530,21 @@ export function initializeSMSOptInForm(): void {
       const data = await response.json();
       console.log('SMS Opt-In Success - Response Data:', data);
 
+      // Update success message based on consent status
+      const titleElement = successMessage.querySelector('h3');
+      const messageElement = successMessage.querySelector('p:first-of-type');
+
+      if (titleElement && messageElement) {
+        if (data.consent_status === 'opted_in') {
+          titleElement.textContent = "You're All Set!";
+          messageElement.textContent = "You'll receive health alerts about your family member at the phone number you provided.";
+        } else {
+          // Opted out
+          titleElement.textContent = "Preferences Updated";
+          messageElement.textContent = "You've successfully opted out of SMS alerts. You won't receive any messages from us.";
+        }
+      }
+
       // Show success message
       formCard.style.display = 'none';
       successMessage.style.display = 'block';
@@ -542,7 +557,7 @@ export function initializeSMSOptInForm(): void {
 
       if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
         // Connection refused - CORS or network error
-        errorMessage = 'Connection refused. Chickadee backend API security is prohibiting traffic from you.';
+        errorMessage = 'Connection error. Please check your internet connection and try again.';
       } else if (error instanceof Error) {
         errorMessage = error.message;
       }
