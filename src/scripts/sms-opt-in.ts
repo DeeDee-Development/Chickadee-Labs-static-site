@@ -572,5 +572,5 @@ export function getApiUrl(): string {
   }
 
   // For production - Cloud Run URL
-  return import.meta.env.PUBLIC_API_URL || 'https://chickadee-health-backend-291940511306.us-east4.run.app';
+  return import.meta.env.PUBLIC_API_URL || 'https://deedee-health-backend-291940511306.us-east4.run.app';
 }
