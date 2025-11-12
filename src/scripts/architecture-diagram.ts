@@ -79,7 +79,7 @@ export function initArchitectureDiagram() {
           'text-wrap': 'wrap',
           'text-max-width': '140px',
           'font-size': '13px',
-          'font-weight': '600',
+          'font-weight': 'bold' as any,
           'color': '#fff',
           'background-color': '#0066EE',
           'width': '180px',
@@ -89,8 +89,6 @@ export function initArchitectureDiagram() {
           'border-color': 'transparent',
           'text-outline-color': 'transparent',
           'text-outline-width': 0,
-          'transition-property': 'border-color, border-width',
-          'transition-duration': '0.3s',
         }
       },
 
@@ -99,7 +97,7 @@ export function initArchitectureDiagram() {
         selector: 'node[type="user"]',
         style: {
           'background-fill': 'linear-gradient',
-          'background-gradient-stop-colors': '#667eea #764ba2',
+          'background-gradient-stop-colors': ['#667eea', '#764ba2'] as any,
           'background-gradient-direction': 'to-bottom-right',
           'width': '170px',
           'height': '130px',
@@ -112,7 +110,7 @@ export function initArchitectureDiagram() {
         selector: 'node[type="client"]',
         style: {
           'background-fill': 'linear-gradient',
-          'background-gradient-stop-colors': '#0066EE #00A8FF',
+          'background-gradient-stop-colors': ['#0066EE', '#00A8FF'] as any,
           'background-gradient-direction': 'to-bottom-right',
           'width': '190px',
           'height': '145px',
@@ -127,7 +125,7 @@ export function initArchitectureDiagram() {
           'width': '130px',
           'height': '220px',
           'background-fill': 'linear-gradient',
-          'background-gradient-stop-colors': '#1a1a1a #2d2d2d',
+          'background-gradient-stop-colors': ['#1a1a1a', '#2d2d2d'] as any,
           'background-gradient-direction': 'to-bottom',
           'border-width': '4px',
           'border-color': '#444',
@@ -140,7 +138,7 @@ export function initArchitectureDiagram() {
         selector: 'node[type="api"]',
         style: {
           'background-fill': 'linear-gradient',
-          'background-gradient-stop-colors': '#f093fb #f5576c',
+          'background-gradient-stop-colors': ['#f093fb', '#f5576c'] as any,
           'background-gradient-direction': 'to-bottom-right',
           'width': '220px',
           'height': '170px',
@@ -155,7 +153,7 @@ export function initArchitectureDiagram() {
         selector: 'node[type="ml"]',
         style: {
           'background-fill': 'linear-gradient',
-          'background-gradient-stop-colors': '#4facfe #00f2fe',
+          'background-gradient-stop-colors': ['#4facfe', '#00f2fe'] as any,
           'background-gradient-direction': 'to-bottom-right',
           'width': '210px',
           'height': '160px',
@@ -168,7 +166,7 @@ export function initArchitectureDiagram() {
         selector: 'node[type="data"]',
         style: {
           'background-fill': 'linear-gradient',
-          'background-gradient-stop-colors': '#43e97b #38f9d7',
+          'background-gradient-stop-colors': ['#43e97b', '#38f9d7'] as any,
           'background-gradient-direction': 'to-bottom-right',
           'width': '200px',
           'height': '150px',
@@ -180,7 +178,7 @@ export function initArchitectureDiagram() {
         selector: 'node[type="cache"]',
         style: {
           'background-fill': 'linear-gradient',
-          'background-gradient-stop-colors': '#fa709a #fee140',
+          'background-gradient-stop-colors': ['#fa709a', '#fee140'] as any,
           'background-gradient-direction': 'to-bottom-right',
           'width': '190px',
           'height': '140px',
@@ -192,7 +190,7 @@ export function initArchitectureDiagram() {
         selector: 'node[type="external"]',
         style: {
           'background-fill': 'linear-gradient',
-          'background-gradient-stop-colors': '#ff9a56 #ff6a88',
+          'background-gradient-stop-colors': ['#ff9a56', '#ff6a88'] as any,
           'background-gradient-direction': 'to-bottom-right',
           'width': '200px',
           'height': '145px',
@@ -204,7 +202,7 @@ export function initArchitectureDiagram() {
         selector: 'node[type="auth"]',
         style: {
           'background-fill': 'linear-gradient',
-          'background-gradient-stop-colors': '#fbc2eb #a6c1ee',
+          'background-gradient-stop-colors': ['#fbc2eb', '#a6c1ee'] as any,
           'background-gradient-direction': 'to-bottom-right',
           'width': '195px',
           'height': '140px',
@@ -216,7 +214,7 @@ export function initArchitectureDiagram() {
         selector: 'node[type="monitoring"]',
         style: {
           'background-fill': 'linear-gradient',
-          'background-gradient-stop-colors': '#a8edea #fed6e3',
+          'background-gradient-stop-colors': ['#a8edea', '#fed6e3'] as any,
           'background-gradient-direction': 'to-bottom-right',
           'width': '200px',
           'height': '145px',
@@ -228,7 +226,7 @@ export function initArchitectureDiagram() {
         selector: 'node[type="infrastructure"]',
         style: {
           'background-fill': 'linear-gradient',
-          'background-gradient-stop-colors': '#d299c2 #fef9d7',
+          'background-gradient-stop-colors': ['#d299c2', '#fef9d7'] as any,
           'background-gradient-direction': 'to-bottom-right',
           'width': '210px',
           'height': '150px',
@@ -265,8 +263,6 @@ export function initArchitectureDiagram() {
           'text-background-padding': '3px',
           'text-background-shape': 'roundrectangle',
           'line-style': 'solid',
-          'transition-property': 'line-color, width',
-          'transition-duration': '0.3s',
         }
       },
 
@@ -415,14 +411,14 @@ export function initArchitectureDiagram() {
       nodeSep: 80,
       rankSep: 120,
       padding: 50,
-    },
+    } as any,
 
     minZoom: 0.5,
     maxZoom: 2,
   });
 
   // Node click handler for database
-  cy.on('tap', 'node#database', function(evt) {
+  cy.on('tap', 'node#database', function() {
     const modal = document.getElementById('database-modal');
     if (modal) {
       modal.style.display = 'flex';
