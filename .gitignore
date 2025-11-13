@@ -1,6 +1,7 @@
 # Build output
 dist/
 .astro/
+.build-temp/
 
 # Dependencies
 node_modules/
