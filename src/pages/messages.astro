@@ -1,6 +1,13 @@
 ---
 // Redirect /messages to /sms-opt-in/
 const redirectTo = '/sms-opt-in/';
+
+// Metadata for text message previews (Open Graph/Twitter Cards)
+const title = 'Stay Connected to Your Loved Ones | Chickadee Health';
+const description = 'Get timely health alerts about your family member delivered right to your phone. Opt in to receive SMS notifications when fall risks are detected.';
+const siteUrl = 'https://chickadee.family';
+const pageUrl = `${siteUrl}/messages`;
+const imageUrl = `${siteUrl}/favicon.png`; // Preview image
 ---
 
 <!DOCTYPE html>
@@ -9,7 +16,28 @@ const redirectTo = '/sms-opt-in/';
   <meta charset="UTF-8">
   <meta http-equiv="refresh" content={`0; url=${redirectTo}`}>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting...</title>
+
+  <!-- Page Title -->
+  <title>{title}</title>
+  <meta name="description" content={description}>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={pageUrl}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={imageUrl}>
+  <meta property="og:site_name" content="Chickadee Health">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content={pageUrl}>
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={imageUrl}>
+
+  <!-- Additional Meta -->
+  <meta name="theme-color" content="#F5A623">
 </head>
 <body>
   <p>Redirecting to <a href={redirectTo}>SMS Opt-In</a>...</p>
