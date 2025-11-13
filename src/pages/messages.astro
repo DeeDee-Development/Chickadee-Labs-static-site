@@ -7,7 +7,8 @@ const title = 'Stay Connected to Your Loved Ones | Chickadee Health';
 const description = 'Get timely health alerts about your family member delivered right to your phone. Opt in to receive SMS notifications when fall risks are detected.';
 const siteUrl = 'https://chickadee.family';
 const pageUrl = `${siteUrl}/messages`;
-const imageUrl = `${siteUrl}/favicon.png`; // Preview image
+const imageUrl = `${siteUrl}/message-preview.png`; // Custom preview image (1200x630)
+const imageAlt = 'Chickadee Health - Family fall prevention and health monitoring';
 ---
 
 <!DOCTYPE html>
@@ -21,23 +22,38 @@ const imageUrl = `${siteUrl}/favicon.png`; // Preview image
   <title>{title}</title>
   <meta name="description" content={description}>
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph / Facebook / iMessage (Enhanced) -->
   <meta property="og:type" content="website">
   <meta property="og:url" content={pageUrl}>
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
   <meta property="og:image" content={imageUrl}>
+  <meta property="og:image:url" content={imageUrl}>
+  <meta property="og:image:secure_url" content={imageUrl}>
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content={imageAlt}>
   <meta property="og:site_name" content="Chickadee Health">
+  <meta property="og:locale" content="en_US">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
+  <!-- Twitter (Enhanced for larger preview) -->
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content={pageUrl}>
   <meta name="twitter:title" content={title}>
   <meta name="twitter:description" content={description}>
   <meta name="twitter:image" content={imageUrl}>
+  <meta name="twitter:image:alt" content={imageAlt}>
+
+  <!-- Apple-specific Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Chickadee Health">
+  <link rel="apple-touch-icon" href="/app-icon.png">
 
   <!-- Additional Meta -->
   <meta name="theme-color" content="#F5A623">
+  <meta name="format-detection" content="telephone=no">
 </head>
 <body>
   <p>Redirecting to <a href={redirectTo}>SMS Opt-In</a>...</p>
