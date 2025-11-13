@@ -8,7 +8,7 @@ The architecture page (`/architecture`) contains a detailed system architecture 
 
 ### How to Enable/Disable
 
-Edit `site.config.ts`:
+Edit `site.config.js`:
 
 ```typescript
 export const siteConfig = {

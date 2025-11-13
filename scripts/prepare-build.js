@@ -16,7 +16,7 @@ const __dirname = dirname(__filename);
 const projectRoot = join(__dirname, '..');
 
 // Import site config (we'll use dynamic import to handle ESM)
-const { siteConfig } = await import('../site.config.ts');
+const { siteConfig } = await import('../site.config.js');
 
 // Define pages that can be conditionally excluded
 const CONDITIONAL_PAGES = {

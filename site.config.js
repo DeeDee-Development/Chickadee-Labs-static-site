@@ -24,4 +24,4 @@ export const siteConfig = {
   /**
    * Add other site-wide configuration here as needed
    */
-} as const;
+};
