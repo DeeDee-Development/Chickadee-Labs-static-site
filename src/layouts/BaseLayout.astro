@@ -105,8 +105,8 @@ const ogImageURL = new URL(image, Astro.site).href;
         <ul class="nav-links">
           <li><a href={import.meta.env.BASE_URL + "caregivers/"}>For Caregivers</a></li>
           <li><a href={import.meta.env.BASE_URL + "#about"}>About</a></li>
-          <li><a href={import.meta.env.BASE_URL + "#solution"}>Solution</a></li>
-          <li><a href={import.meta.env.BASE_URL + "#contact"} class="btn btn-primary btn-sm">Contact</a></li>
+          <li><a href={import.meta.env.BASE_URL + "sms-opt-in/"}>SMS</a></li>
+          <li><a href={import.meta.env.BASE_URL + "contact/"} class="btn btn-primary btn-sm">Contact</a></li>
         </ul>
       )}
     </nav>
@@ -293,18 +293,20 @@ const ogImageURL = new URL(image, Astro.site).href;
   </style>
 
   <script>
-    // Cute logo wiggle on click
+    // Cute logo wiggle on click + scroll to top when on homepage
     document.addEventListener('DOMContentLoaded', () => {
       const logo = document.getElementById('logo-link');
       if (logo) {
         logo.addEventListener('click', (e) => {
-          // Only trigger animation if we're already on the homepage
+          // Only trigger animation and scroll if we're already on the homepage
           if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
             e.preventDefault();
             logo.classList.add('wiggle');
             setTimeout(() => {
               logo.classList.remove('wiggle');
             }, 500);
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           }
         });
       }

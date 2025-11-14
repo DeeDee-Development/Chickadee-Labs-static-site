@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact Us | Chickadee Health"
+  description="Get in touch with Chickadee Health. We're here to answer your questions about fall prevention and family health monitoring."
+  simpleNav={true}
+>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Get in Touch</h1>
+        <p class="hero-subtitle">
+          Have questions about Chickadee Health? We'd love to hear from you.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Typeform Section -->
+  <section class="section form-section">
+    <div class="container">
+      <div class="typeform-container">
+        <iframe
+          src="https://form.typeform.com/to/YIbmrSDb"
+          frameborder="0"
+          style="width: 100%; height: 600px;"
+          allow="camera; microphone; autoplay; encrypted-media;"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-accent-light) 100%);
+      padding: var(--space-3xl) 0 var(--space-2xl);
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: var(--font-size-4xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin-bottom: var(--space-md);
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: var(--font-size-xl);
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Form Section */
+    .form-section {
+      padding: var(--space-3xl) 0;
+    }
+
+    .typeform-container {
+      max-width: 900px;
+      margin: 0 auto;
+      min-height: 600px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        padding: var(--space-2xl) 0 var(--space-xl);
+      }
+
+      .hero h1 {
+        font-size: var(--font-size-3xl);
+      }
+
+      .hero-subtitle {
+        font-size: var(--font-size-lg);
+      }
+
+      .form-section {
+        padding: var(--space-2xl) 0;
+      }
+
+      .typeform-container {
+        min-height: 500px;
+      }
+    }
+  </style>
+</BaseLayout>
