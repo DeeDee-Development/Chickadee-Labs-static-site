@@ -19,19 +19,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Typeform Section -->
+  <!-- Tally Form Section -->
   <section class="section form-section">
     <div class="container">
-      <div class="typeform-container">
+      <div class="form-container">
         <iframe
-          src="https://form.typeform.com/to/YIbmrSDb"
+          data-tally-src="https://tally.so/embed/Gxxekp?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="800"
           frameborder="0"
-          style="width: 100%; height: 600px;"
-          allow="camera; microphone; autoplay; encrypted-media;"
+          marginheight="0"
+          marginwidth="0"
+          title="Contact Us"
         ></iframe>
       </div>
     </div>
   </section>
+
+  <script src="https://tally.so/widgets/embed.js"></script>
 
   <style>
     /* Hero Section */
@@ -64,12 +70,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     /* Form Section */
     .form-section {
       padding: var(--space-3xl) 0;
+      background: white;
     }
 
-    .typeform-container {
-      max-width: 900px;
+    .form-container {
+      max-width: 800px;
       margin: 0 auto;
-      min-height: 600px;
+    }
+
+    .form-container iframe {
+      border: none;
+      display: block;
     }
 
     /* Mobile Responsive */
@@ -90,8 +101,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         padding: var(--space-2xl) 0;
       }
 
-      .typeform-container {
-        min-height: 500px;
+      .form-container iframe {
+        height: 700px;
       }
     }
   </style>

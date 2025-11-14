@@ -1,0 +1,319 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="FAQ | Chickadee Health"
+  description="Frequently asked questions about Chickadee Health fall prevention technology, Apple Watch compatibility, privacy, and how our service works."
+  simpleNav={true}
+>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Frequently Asked Questions</h1>
+        <p class="hero-subtitle">
+          Everything you need to know about Chickadee Health.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section faq-section">
+    <div class="container">
+      <div class="faq-content">
+
+        <!-- How It Works -->
+        <div class="faq-category">
+          <h2>How It Works</h2>
+
+          <div class="faq-item">
+            <h3>How does Chickadee Health detect fall risks?</h3>
+            <p>
+              Chickadee Health analyzes health data from your Apple Watch and iPhone to identify patterns that research shows can precede falls—such as declining mobility, poor sleep quality, reduced activity levels, and changes in heart rate variability. When concerning patterns are detected, we alert your family members before a fall happens.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What happens when a risk is detected?</h3>
+            <p>
+              When our system identifies concerning health patterns, it sends an SMS text message alert to your designated family members. The alert includes general observations (like "sleep has been declining" or "activity is lower than usual") without specific measurements or sensitive health data. This gives your loved ones a heads-up to check in with you.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Is this a medical device?</h3>
+            <p>
+              No. Chickadee Health is not a medical device and does not provide medical advice, diagnosis, or treatment. It's a wellness monitoring tool designed to help families stay connected and aware of potential health concerns. Always consult healthcare professionals for medical advice.
+            </p>
+          </div>
+        </div>
+
+        <!-- Device Compatibility -->
+        <div class="faq-category">
+          <h2>Device Compatibility</h2>
+
+          <div class="faq-item">
+            <h3>What devices do I need?</h3>
+            <p>
+              You need an iPhone and an Apple Watch. The person being monitored wears the Apple Watch daily, and the app runs on their iPhone to analyze health data and send alerts to family members.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Which Apple Watch models are supported?</h3>
+            <p>
+              Chickadee Health works with Apple Watch Series 4 and newer, including SE and Ultra models. These models have the sensors needed to track the health metrics we analyze for fall risk detection.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What about Android or other smartwatches?</h3>
+            <p>
+              Currently, Chickadee Health only supports Apple Watch and iPhone. We chose Apple's ecosystem because of its robust health data infrastructure (HealthKit) and strong privacy protections. Android and other smartwatch support may come in the future.
+            </p>
+          </div>
+        </div>
+
+        <!-- Privacy & Security -->
+        <div class="faq-category">
+          <h2>Privacy & Security</h2>
+
+          <div class="faq-item">
+            <h3>Where is my health data stored?</h3>
+            <p>
+              Your health data stays on your device. We never store health metrics, measurements, or detailed health data on our servers. All health analysis happens locally on your iPhone using Apple HealthKit. We only store contact information (phone numbers and names) needed to send SMS alerts to your family.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What information do family members receive?</h3>
+            <p>
+              Family members receive general health observations via SMS, such as "sleep quality has been declining" or "activity is lower than usual." They never receive specific measurements, exact numbers, or detailed health data. Alerts are designed to prompt a check-in conversation, not to share private health details.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can I control who gets alerts?</h3>
+            <p>
+              Yes. You choose exactly which family members receive health alerts by adding their phone numbers to your monitoring network. You can add or remove family members at any time through the app. Family members can also opt out of alerts by replying STOP to any message.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pricing & Availability -->
+        <div class="faq-category">
+          <h2>Pricing & Availability</h2>
+
+          <div class="faq-item">
+            <h3>When will Chickadee Health be available?</h3>
+            <p>
+              We're currently in active development and building toward a beta launch. <a href="https://tally.so/r/q445pY" target="_blank" rel="noopener noreferrer">Join our waitlist</a> to be notified when we're ready for beta testers and early access.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How much will it cost?</h3>
+            <p>
+              Pricing details will be announced closer to launch. We're committed to making Chickadee Health accessible and affordable for families who need it. Beta testers and early access members will receive special pricing.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Will there be a free trial?</h3>
+            <p>
+              Yes, we plan to offer a free trial period so you can experience Chickadee Health risk-free and see if it's right for your family.
+            </p>
+          </div>
+        </div>
+
+        <!-- Setup & Use -->
+        <div class="faq-category">
+          <h2>Setup & Use</h2>
+
+          <div class="faq-item">
+            <h3>Is it difficult to set up?</h3>
+            <p>
+              No. Setup takes just a few minutes. Download the app, grant permission to access Apple HealthKit, add your family members' phone numbers, and you're done. The app runs automatically in the background—no daily tasks required.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Does the person being monitored need to do anything daily?</h3>
+            <p>
+              Just wear their Apple Watch as usual. The app runs automatically in the background and doesn't require any daily interaction. The more consistently the Apple Watch is worn, the better the monitoring.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Do SMS messages cost extra?</h3>
+            <p>
+              Chickadee Health doesn't charge for SMS messages, but standard message and data rates from your mobile carrier may apply. Most modern phone plans include unlimited texting, so this typically isn't an additional cost.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Still Have Questions?</h2>
+        <p>We're here to help. Reach out and we'll get back to you quickly.</p>
+        <a href="/contact/" class="btn btn-primary btn-lg">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-accent-light) 100%);
+    padding: var(--space-3xl) 0 var(--space-2xl);
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    padding: var(--space-3xl) 0;
+    background: white;
+  }
+
+  .faq-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .faq-category {
+    margin-bottom: var(--space-3xl);
+  }
+
+  .faq-category:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-category > h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 3px solid var(--color-primary);
+  }
+
+  .faq-item {
+    margin-bottom: var(--space-xl);
+  }
+
+  .faq-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-item h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+  }
+
+  .faq-item p {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  .faq-item a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .faq-item a:hover {
+    color: var(--color-accent);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: var(--gradient-subtle);
+    padding: var(--space-3xl) 0;
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-content p {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-xl);
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      padding: var(--space-2xl) 0 var(--space-xl);
+    }
+
+    .hero h1 {
+      font-size: var(--font-size-3xl);
+    }
+
+    .hero-subtitle {
+      font-size: var(--font-size-lg);
+    }
+
+    .faq-section {
+      padding: var(--space-2xl) 0;
+    }
+
+    .faq-category > h2 {
+      font-size: var(--font-size-2xl);
+    }
+
+    .faq-item h3 {
+      font-size: var(--font-size-lg);
+    }
+
+    .cta-section {
+      padding: var(--space-2xl) 0;
+    }
+
+    .cta-content h2 {
+      font-size: var(--font-size-2xl);
+    }
+  }
+</style>

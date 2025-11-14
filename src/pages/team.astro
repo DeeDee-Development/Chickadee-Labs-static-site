@@ -1,0 +1,310 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Our Team | Chickadee Health"
+  description="Meet the team behind Chickadee Health. We're building technology to prevent falls and keep families connected."
+  simpleNav={true}
+>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Meet the Team</h1>
+        <p class="hero-subtitle">
+          We're building technology to prevent falls and give families peace of mind.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section team-section">
+    <div class="container">
+      <div class="team-grid">
+        <!-- Alexander G. Riccio -->
+        <div class="team-member">
+          <div class="member-photo-wrapper">
+            <div class="member-photo">
+              <img src="https://images.unsplash.com/photo-1621460248083-454a8e9f3c77?w=400&h=400&fit=crop" alt="Alexander G. Riccio" />
+            </div>
+          </div>
+          <h2 class="member-name">Alexander G. Riccio</h2>
+          <p class="member-bio">
+            Alexander brings expertise in health technology and product development to Chickadee Health.
+          </p>
+          <p class="member-role">Co-Founder</p>
+        </div>
+
+        <!-- Yaakov Bressler -->
+        <div class="team-member">
+          <div class="member-photo-wrapper">
+            <div class="member-photo">
+              <img src="https://images.unsplash.com/photo-1551565771-a45eb3d83c3e?w=400&h=400&fit=crop" alt="Yaakov Bressler" />
+            </div>
+          </div>
+          <h2 class="member-name">Yaakov Bressler</h2>
+          <p class="member-bio">
+            Yaakov leads technical development and infrastructure, building the platform that keeps families connected.
+          </p>
+          <p class="member-role">Co-Founder</p>
+        </div>
+
+        <!-- Alice Catherine Nathoo -->
+        <div class="team-member">
+          <div class="member-photo-wrapper">
+            <div class="member-photo">
+              <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop" alt="Alice Catherine Nathoo" />
+            </div>
+          </div>
+          <h2 class="member-name">Alice Catherine Nathoo</h2>
+          <p class="member-bio">
+            Alice focuses on user experience and ensuring Chickadee Health serves the real needs of families.
+          </p>
+          <p class="member-role">Co-Founder</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="section mission-section">
+    <div class="container">
+      <div class="mission-content">
+        <h2>Our Mission</h2>
+        <p>
+          We believe seniors shouldn't have to choose between living independently and staying safe. Chickadee Health provides the safety net that lets families sleep soundly—knowing they'll be alerted to fall risks before tragedy strikes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Handle image loading errors
+    document.addEventListener('DOMContentLoaded', () => {
+      const images = document.querySelectorAll('.member-photo img');
+      images.forEach(img => {
+        img.addEventListener('error', function() {
+          this.style.opacity = '0';
+          const placeholder = this.parentElement.querySelector('::before');
+          if (this.parentElement) {
+            this.parentElement.classList.add('image-error');
+          }
+        });
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-accent-light) 100%);
+    padding: var(--space-3xl) 0 var(--space-2xl);
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Team Section */
+  .team-section {
+    padding: var(--space-3xl) 0;
+    background: #f5f5f5;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-2xl);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .team-member {
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto;
+    align-items: center;
+    justify-items: center;
+    padding: var(--space-2xl) var(--space-xl) var(--space-xl);
+    background: white;
+    border-radius: 20px;
+    transition: all var(--transition-base);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    min-height: 520px;
+  }
+
+  .team-member:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+  }
+
+  .member-photo-wrapper {
+    grid-row: 1;
+    margin-bottom: var(--space-lg);
+  }
+
+  .member-photo {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, #F5A623 0%, #FF8C42 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .member-photo::before {
+    content: '?';
+    position: absolute;
+    font-size: 72px;
+    color: #ccc;
+    font-weight: var(--font-weight-bold);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    transition: transform var(--transition-base);
+    position: relative;
+    z-index: 1;
+  }
+
+  .member-photo:hover img {
+    transform: scale(1.05);
+  }
+
+  /* Show placeholder when image fails to load */
+  .member-photo.image-error::before {
+    opacity: 1;
+  }
+
+  .member-photo.image-error img {
+    opacity: 0;
+  }
+
+  .member-name {
+    grid-row: 2;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin: 0 0 var(--space-sm) 0;
+    letter-spacing: -0.02em;
+    align-self: start;
+  }
+
+  .member-bio {
+    grid-row: 3;
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    line-height: 1.5;
+    margin: 0 0 var(--space-md) 0;
+    max-width: 300px;
+    align-self: start;
+  }
+
+  .member-role {
+    grid-row: 5;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0;
+    padding-top: var(--space-md);
+    align-self: end;
+  }
+
+  /* Mission Section */
+  .mission-section {
+    background: var(--gradient-subtle);
+    padding: var(--space-3xl) 0;
+  }
+
+  .mission-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .mission-content h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+  }
+
+  .mission-content p {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-light);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      padding: var(--space-2xl) 0 var(--space-xl);
+    }
+
+    .hero h1 {
+      font-size: var(--font-size-3xl);
+    }
+
+    .hero-subtitle {
+      font-size: var(--font-size-lg);
+    }
+
+    .team-section {
+      padding: var(--space-2xl) 0;
+    }
+
+    .team-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-3xl);
+    }
+
+    .member-photo {
+      width: 180px;
+      height: 180px;
+    }
+
+    .mission-section {
+      padding: var(--space-2xl) 0;
+    }
+
+    .mission-content h2 {
+      font-size: var(--font-size-2xl);
+    }
+
+    .mission-content p {
+      font-size: var(--font-size-lg);
+    }
+  }
+</style>
