@@ -7,9 +7,9 @@ Use this skill when making design decisions for the Chickadee Labs static site.
 **Goal**: Create a clean, minimal, modern website that prioritizes clarity and user focus.
 
 **PRIMARY Inspiration Sources**:
-- **MyFitnessPal**: Beautiful layout, clean and easy
-- **YAZIO**: Clean and modern (but simplified - avoid "too much going on")
-- **WaterMinder**: Modern, dynamic, clever
+- [**MyFitnessPal**](https://www.myfitnesspal.com/): Beautiful layout, clean and easy
+- [**YAZIO**](https://www.yazio.com/en): Clean and modern (but simplified - avoid "too much going on")
+- [**WaterMinder**](https://waterminder.com/): Modern, dynamic, clever
 
 ## Detailed Design Analysis from Inspiration Sites
 
@@ -22,11 +22,10 @@ Use this skill when making design decisions for the Chickadee Labs static site.
 - Prevents cognitive overload
 
 **Color Palette**:
-- **Vibrant blue primary**: #0066EE
-- **Purple accent**: #9383FB (creates gradient in hero section)
-- **Dark charcoal**: #151824 for footer contrast
-- **Light grays**: #EBEBF0 for subtle dividers
-- Restrained palette maintains focus without visual noise
+- MyFitnessPal uses vibrant blue (#0066EE) and purple (#9383FB)
+- This color scheme is available as the **'tech-blue' theme** in `src/config/colors.ts`
+- Currently using **'warm-caring' theme** with golden orange from chickadee logo
+- All themes maintain restrained palettes to avoid visual noise
 
 **Typography**:
 - **Font family**: Inter (contemporary, geometric feel)
@@ -113,21 +112,42 @@ Use this skill when making design decisions for the Chickadee Labs static site.
 - **Grid-based responsive**: 2-column desktop, single-column mobile
 
 ### 2. Color Palette
-**Primary Colors**:
-- **Vibrant blue**: #0066EE (trust, clarity, health-focused)
-- **Purple accent**: #9383FB (complementary, for gradients)
 
-**Supporting Colors**:
-- **Soft greens**: For positive elements, checkmarks, success states
-- **Blues/teals**: Health and wellness associations
-- **Neutrals**:
-  - Dark charcoal #151824 for contrast
-  - Light grays #EBEBF0 for dividers
-  - Whites for backgrounds
+**IMPORTANT**: Color palettes are centralized in `src/config/colors.ts` and are **NOT fixed**. The active theme can be changed by updating the `ACTIVE_THEME` variable.
 
-**Gradients**: Subtle backgrounds (light blues to whites) - clean, professional tone
+**Available Color Themes** (in `src/config/colors.ts`):
 
-**Restraint**: 2-3 main colors to maintain focus without visual noise
+1. **'warm-caring'** (currently active) - Approachable, friendly, nurturing
+   - Primary: Golden Orange (#F5A623) from chickadee logo
+   - Accent: Deep Charcoal (#2B2B2B)
+   - Warm cream backgrounds and borders
+
+2. **'golden-hour'** - Energetic, optimistic, vibrant
+   - Primary: Rich Amber (#E89B3C)
+   - Accent: Warm Brown (#8B6F47)
+   - Peachy backgrounds
+
+3. **'autumn-comfort'** - Grounded, trustworthy, cozy
+   - Primary: Burnt Orange (#D97B29)
+   - Accent: Chocolate Brown (#6B5344)
+   - Wheat-toned backgrounds
+
+4. **'tech-blue'** - Modern, professional, tech-forward
+   - Primary: Vibrant blue (#0066EE)
+   - Accent: Purple (#9383FB)
+   - Cool gray backgrounds
+
+**How to Use Colors**:
+- Always reference CSS variables (e.g., `var(--color-primary)`) rather than hardcoded hex values
+- All colors are automatically mapped to CSS variables from the active theme
+- Switch themes by changing `ACTIVE_THEME` in `src/config/colors.ts`
+- Each theme includes: primary colors, text colors, backgrounds, borders, gradients, and shadows
+
+**Color Philosophy**:
+- **Semantic colors**: Success green (#33C759) across all themes
+- **Neutrals**: Each theme has custom text, background, and border colors
+- **Gradients**: Hero and subtle gradients tailored to each theme
+- **Restraint**: 2-3 main colors to maintain focus without visual noise
 
 ### 3. Typography
 - **Font family**: Inter (or similar modern, geometric sans-serif)
@@ -193,6 +213,14 @@ When making design choices, ask:
 
 ## Implementation Notes
 
+### Color System
+- **Source of truth**: `src/config/colors.ts` contains all color palettes
+- **Always use CSS variables**: Reference `var(--color-primary)`, never hardcode hex values
+- **Theme switching**: Change `ACTIVE_THEME` in `src/config/colors.ts` to switch entire site theme
+- **Available themes**: 'warm-caring', 'golden-hour', 'autumn-comfort', 'tech-blue'
+- **CSS variables**: Automatically generated and mapped in `src/styles/global.css`
+
+### General Implementation
 - Prefer CSS over JavaScript for animations when possible
 - Use semantic HTML for accessibility
 - Ensure responsive design from the start (mobile-first)

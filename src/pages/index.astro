@@ -53,46 +53,149 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Solution Section - Modular cards like YAZIO -->
+  <!-- Solution Section - Data-Inspired Narrative -->
   <section id="solution" class="section">
     <div class="container">
       <div class="section-header">
         <h2>How We Prevent Falls</h2>
-        <p>Early detection of the warning signs that precede falls</p>
+        <p>Your mobility this week shows patterns worth monitoring. We connect the dots so you don't have to.</p>
       </div>
 
-      <div class="grid grid-2">
-        <div class="card feature-card">
-          <div class="feature-icon">🚶</div>
-          <h3>Track Mobility Changes</h3>
-          <p>Detect declining walking patterns and reduced movement before they lead to falls</p>
+      <!-- Data Metrics Grid -->
+      <div class="metrics-grid">
+        <!-- Walking Speed - Warning Status -->
+        <div class="metric-card" data-status="warning">
+          <div class="metric-header">
+            <span class="metric-icon">🚶</span>
+            <span class="metric-name">Walking Speed</span>
+            <span class="metric-status-dot status-warning"></span>
+          </div>
+          <div class="metric-value">
+            <span class="metric-number status-warning">1.4</span>
+            <span class="metric-unit">ft/s</span>
+          </div>
+          <p class="metric-context">Slower than usual</p>
+          <!-- Mini sparkline visualization -->
+          <svg class="metric-sparkline" width="100%" height="32" viewBox="0 0 100 32" preserveAspectRatio="none">
+            <polyline
+              fill="none"
+              stroke="var(--color-primary)"
+              stroke-width="2"
+              points="0,16 20,14 40,18 60,12 80,20 100,24"
+            />
+          </svg>
         </div>
 
-        <div class="card feature-card">
-          <div class="feature-icon">😴</div>
-          <h3>Monitor Sleep Quality</h3>
-          <p>Poor sleep dramatically increases fall risk—we catch consecutive bad nights early</p>
+        <!-- Steps Per Day - Good Status -->
+        <div class="metric-card" data-status="good">
+          <div class="metric-header">
+            <span class="metric-icon">👣</span>
+            <span class="metric-name">Steps Per Day</span>
+            <span class="metric-status-dot status-good"></span>
+          </div>
+          <div class="metric-value">
+            <span class="metric-number status-good">6,247</span>
+            <span class="metric-unit">steps</span>
+          </div>
+          <p class="metric-context">Consistent with normal</p>
+          <!-- Progress bar visualization -->
+          <div class="metric-progress">
+            <div class="progress-bar">
+              <div class="progress-fill status-good" style="width: 78%"></div>
+            </div>
+            <span class="progress-label">78% of goal</span>
+          </div>
         </div>
 
-        <div class="card feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Measure Energy & Fatigue</h3>
-          <p>Fatigue is a major fall predictor—track energy levels to identify high-risk periods</p>
+        <!-- Balance Time - Good Status -->
+        <div class="metric-card" data-status="good">
+          <div class="metric-header">
+            <span class="metric-icon">⚖️</span>
+            <span class="metric-name">Balance Time</span>
+            <span class="metric-status-dot status-good"></span>
+          </div>
+          <div class="metric-value">
+            <span class="metric-number status-good">12</span>
+            <span class="metric-unit">min</span>
+          </div>
+          <p class="metric-context">Standing activities</p>
+          <!-- Mini bar chart visualization -->
+          <div class="metric-mini-bars">
+            <div class="mini-bar" style="height: 60%"></div>
+            <div class="mini-bar" style="height: 75%"></div>
+            <div class="mini-bar" style="height: 85%"></div>
+            <div class="mini-bar" style="height: 70%"></div>
+            <div class="mini-bar" style="height: 90%"></div>
+            <div class="mini-bar" style="height: 80%"></div>
+            <div class="mini-bar" style="height: 95%"></div>
+          </div>
         </div>
 
-        <div class="card feature-card">
-          <div class="feature-icon">🔔</div>
-          <h3>Alert Families Early</h3>
-          <p>Notify loved ones when patterns suggest increased fall risk—before an incident occurs</p>
+        <!-- Active Minutes - Good Status -->
+        <div class="metric-card" data-status="good">
+          <div class="metric-header">
+            <span class="metric-icon">⚡</span>
+            <span class="metric-name">Active Minutes</span>
+            <span class="metric-status-dot status-good"></span>
+          </div>
+          <div class="metric-value">
+            <span class="metric-number status-good">89</span>
+            <span class="metric-unit">min</span>
+          </div>
+          <p class="metric-context">Total movement today</p>
+          <!-- Sparkline trending up -->
+          <svg class="metric-sparkline" width="100%" height="32" viewBox="0 0 100 32" preserveAspectRatio="none">
+            <polyline
+              fill="none"
+              stroke="var(--color-success)"
+              stroke-width="2"
+              points="0,24 20,22 40,20 60,16 80,14 100,8"
+            />
+          </svg>
         </div>
       </div>
 
-      <div class="solution-description">
-        <p>
-          Chickadee analyzes health data from Apple Watch and iPhone to identify patterns that precede falls.
-          When we detect concerning trends—like declining mobility, poor sleep, or reduced activity—we alert
-          your family so they can intervene before a fall happens.
-        </p>
+      <!-- Narrative Insights - Connected Story -->
+      <div class="highlights-section">
+        <div class="highlights-header">
+          <h3>What This Pattern Means</h3>
+        </div>
+
+        <div class="insight-card insight-primary">
+          <div class="insight-icon">🔍</div>
+          <div class="insight-content">
+            <h4>Key Finding</h4>
+            <p>Your <strong>walking speed has slowed</strong> while your activity and steps stayed consistent. This combination often indicates <strong>fatigue or balance issues</strong>—a key fall risk factor worth monitoring.</p>
+          </div>
+        </div>
+
+        <div class="insight-card insight-positive">
+          <div class="insight-icon">✅</div>
+          <div class="insight-content">
+            <h4>The Good News</h4>
+            <p>Your balance time and overall activity remain strong. You're staying active, which helps maintain strength and stability.</p>
+          </div>
+        </div>
+
+        <div class="insight-card insight-action">
+          <div class="insight-icon">💡</div>
+          <div class="insight-content">
+            <h4>What We're Watching</h4>
+            <p>We'll continue tracking your pace. If it continues slowing or you notice difficulty with stairs or uneven surfaces, we'll alert your family right away.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- What We Track Details -->
+      <div class="tracking-details">
+        <h3>What We Track</h3>
+        <ul class="tracking-list">
+          <li><strong>Walking speed</strong> — Slowing pace can indicate balance issues</li>
+          <li><strong>Daily steps</strong> — Sudden decreases may signal concern</li>
+          <li><strong>Standing time</strong> — Helps maintain strength and stability</li>
+          <li><strong>Movement patterns</strong> — Irregularities can predict fall risk</li>
+        </ul>
+        <p class="tracking-tagline">When something seems off, you'll know right away.</p>
       </div>
     </div>
   </section>
@@ -219,24 +322,292 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-text-light);
   }
 
-  /* Feature Cards */
-  .feature-card {
-    text-align: center;
+  /* Data Metrics Grid - Apple Health Inspired */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-3xl);
   }
 
-  .feature-icon {
-    font-size: var(--font-size-4xl);
+  .metric-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border var(--transition-base);
+    border-left: 4px solid transparent;
+    position: relative;
+  }
+
+
+  /* Status-based border colors */
+  .metric-card[data-status="good"] {
+    border-left-color: var(--color-success);
+  }
+
+  .metric-card[data-status="warning"] {
+    border-left-color: var(--color-primary);
+  }
+
+  .metric-card[data-status="alert"] {
+    border-left-color: #FF3B30;
+  }
+
+  .metric-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .metric-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
     margin-bottom: var(--space-md);
   }
 
-  .feature-card h3 {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--space-sm);
+  .metric-icon {
+    font-size: var(--font-size-2xl);
   }
 
-  .feature-card p {
+  .metric-name {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    flex: 1;
+  }
+
+  /* Status Dots */
+  .metric-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  .status-dot, .metric-status-dot.status-good {
+    background-color: var(--color-success);
+  }
+
+  .metric-status-dot.status-warning {
+    background-color: var(--color-primary);
+  }
+
+  .metric-status-dot.status-alert {
+    background-color: #FF3B30;
+  }
+
+  .metric-value {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-xs);
+  }
+
+  .metric-number {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    line-height: 1;
+  }
+
+  /* Status-based number colors */
+  .metric-number.status-good {
+    color: var(--color-success);
+  }
+
+  .metric-number.status-warning {
+    color: var(--color-primary);
+  }
+
+  .metric-number.status-alert {
+    color: #FF3B30;
+  }
+
+  .metric-unit {
+    font-size: var(--font-size-sm);
     color: var(--color-text-light);
+    font-weight: var(--font-weight-normal);
+  }
+
+  .metric-context {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    margin: 0 0 var(--space-sm) 0;
+  }
+
+  /* Sparkline Visualization */
+  .metric-sparkline {
+    margin-top: var(--space-sm);
+    opacity: 0.7;
+  }
+
+  /* Progress Bar Visualization */
+  .metric-progress {
+    margin-top: var(--space-sm);
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--color-border);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: var(--space-xs);
+  }
+
+  .progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width var(--transition-slow);
+  }
+
+  .progress-fill.status-good {
+    background: var(--color-success);
+  }
+
+  .progress-fill.status-warning {
+    background: var(--color-primary);
+  }
+
+  .progress-fill.status-alert {
+    background: #FF3B30;
+  }
+
+  .progress-label {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-light);
+  }
+
+  /* Mini Bar Chart Visualization */
+  .metric-mini-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 32px;
+    margin-top: var(--space-sm);
+  }
+
+  .mini-bar {
+    flex: 1;
+    background: var(--color-success);
+    border-radius: 2px;
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+  }
+
+  .metric-card:hover .mini-bar {
+    opacity: 1;
+  }
+
+  /* Narrative Insights Section */
+  .highlights-section {
+    max-width: 800px;
+    margin: 0 auto var(--space-3xl);
+  }
+
+  .highlights-header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .highlights-header h3 {
+    font-size: var(--font-size-2xl);
+    color: var(--color-text);
     margin: 0;
+  }
+
+  .insight-card {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--space-md);
+    transition: box-shadow var(--transition-base);
+    border-left: 4px solid transparent;
+  }
+
+  .insight-card:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Insight card variants */
+  .insight-card.insight-primary {
+    border-left-color: var(--color-primary);
+    background: linear-gradient(to right, rgba(245, 166, 35, 0.05) 0%, white 20%);
+  }
+
+  .insight-card.insight-positive {
+    border-left-color: var(--color-success);
+    background: linear-gradient(to right, rgba(51, 199, 89, 0.05) 0%, white 20%);
+  }
+
+  .insight-card.insight-action {
+    border-left-color: var(--color-text-light);
+    background: white;
+  }
+
+  .insight-icon {
+    font-size: var(--font-size-3xl);
+    flex-shrink: 0;
+  }
+
+  .insight-content h4 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin: 0 0 var(--space-xs) 0;
+  }
+
+  .insight-content p {
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  /* Tracking Details */
+  .tracking-details {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .tracking-details h3 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-lg);
+  }
+
+  .tracking-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: var(--space-lg);
+  }
+
+  .tracking-list li {
+    padding: var(--space-sm) 0;
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .tracking-list li:last-child {
+    border-bottom: none;
+  }
+
+  .tracking-list strong {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .tracking-tagline {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin: var(--space-xl) 0 0;
   }
 
   /* Alternate Section Background */
@@ -326,19 +697,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .challenge-text strong {
     color: var(--color-primary);
     font-weight: var(--font-weight-bold);
-  }
-
-  /* Solution Description */
-  .solution-description {
-    max-width: 800px;
-    margin: var(--space-xl) auto 0;
-    text-align: center;
-  }
-
-  .solution-description p {
-    font-size: var(--font-size-lg);
-    color: var(--color-text-light);
-    line-height: var(--line-height-relaxed);
   }
 
   /* Mission Section */
@@ -431,6 +789,42 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       width: clamp(48px, 15vw, 64px);
       height: clamp(48px, 15vw, 64px);
       font-size: var(--font-size-xl);
+    }
+
+    /* Data metrics mobile adjustments */
+    .metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-md);
+    }
+
+    .metric-card {
+      padding: var(--space-md);
+    }
+
+    .metric-number {
+      font-size: var(--font-size-3xl);
+    }
+
+    /* Insight cards mobile */
+    .insight-card {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: var(--space-md);
+    }
+
+    .insight-icon {
+      font-size: var(--font-size-2xl);
+    }
+
+    .tracking-list {
+      text-align: left;
+    }
+  }
+
+  /* Extra small mobile devices */
+  @media (max-width: 480px) {
+    .metrics-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
