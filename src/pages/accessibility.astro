@@ -1,0 +1,253 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Accessibility | Chickadee Health"
+  description="Chickadee Health is built with accessibility in mind. Learn about VoiceOver support, dark mode, high contrast design, and Dynamic Type compatibility."
+>
+  <div class="legal-page">
+    <div class="container">
+      <div class="legal-content">
+        <h1>Accessibility</h1>
+        <p class="last-updated">Last Updated: January 15, 2025</p>
+
+        <section class="legal-section">
+          <h2>Introduction</h2>
+          <p>
+            Chickadee Health is designed to be accessible to all users, including older adults and people with disabilities. We follow Apple's accessibility guidelines to ensure our app works seamlessly with iOS assistive technologies.
+          </p>
+          <p>
+            Our app supports the following accessibility features:
+          </p>
+        </section>
+
+        <section class="legal-section">
+          <h2>VoiceOver Support</h2>
+          <p>
+            <strong>Status: Fully Supported</strong>
+          </p>
+          <p>
+            Chickadee Health is fully compatible with VoiceOver, Apple's screen reader technology. Every interactive element in the app includes:
+          </p>
+          <ul>
+            <li><strong>Accessibility labels:</strong> Clear descriptions of what each element does, using <code>.accessibilityLabel()</code> modifiers</li>
+            <li><strong>Accessibility hints:</strong> Helpful guidance on how to interact with elements, using <code>.accessibilityHint()</code> modifiers</li>
+            <li><strong>Logical navigation order:</strong> Elements are arranged in a natural reading order for screen reader users</li>
+            <li><strong>Meaningful groupings:</strong> Related content is grouped together for easier navigation</li>
+          </ul>
+          <p>
+            To enable VoiceOver on your iPhone, go to <strong>Settings → Accessibility → VoiceOver</strong>.
+          </p>
+        </section>
+
+        <section class="legal-section">
+          <h2>Dark Mode</h2>
+          <p>
+            <strong>Status: Fully Supported</strong>
+          </p>
+          <p>
+            The app automatically adapts to your device's appearance settings. When you enable Dark Mode on your iPhone, Chickadee Health switches to a dark color scheme that's easier on the eyes in low-light conditions.
+          </p>
+          <ul>
+            <li><strong>Automatic switching:</strong> Uses SwiftUI's built-in dark mode support for seamless adaptation</li>
+            <li><strong>Maintained contrast:</strong> All text and UI elements maintain proper contrast ratios in both light and dark modes</li>
+            <li><strong>Reduced eye strain:</strong> Dark backgrounds reduce brightness in low-light environments</li>
+          </ul>
+          <p>
+            To enable Dark Mode, go to <strong>Settings → Display & Brightness → Dark</strong>.
+          </p>
+        </section>
+
+        <section class="legal-section">
+          <h2>High Contrast Design</h2>
+          <p>
+            <strong>Status: Fully Supported</strong>
+          </p>
+          <p>
+            Chickadee Health is designed specifically for older adults and maintains a minimum contrast ratio of <strong>7:1</strong> between text and background colors, exceeding WCAG AAA standards.
+          </p>
+          <ul>
+            <li><strong>Enhanced readability:</strong> High contrast ensures text is easily readable for users with vision impairments or age-related vision changes</li>
+            <li><strong>Clear visual hierarchy:</strong> Important information stands out clearly from the background</li>
+            <li><strong>Large touch targets:</strong> Buttons and interactive elements are sized generously for easier tapping</li>
+          </ul>
+          <p>
+            This design philosophy ensures that users with low vision, cataracts, or other vision challenges can comfortably use the app.
+          </p>
+        </section>
+
+        <section class="legal-section">
+          <h2>Dynamic Type (Larger Text)</h2>
+          <p>
+            <strong>Status: Fully Supported</strong>
+          </p>
+          <p>
+            The app supports iOS Dynamic Type, allowing text to scale based on your preferred reading size. All text in Chickadee Health automatically adjusts when you change your device's text size setting.
+          </p>
+          <ul>
+            <li><strong>System-wide text scaling:</strong> Respects your iOS text size preferences automatically</li>
+            <li><strong>Proportional scaling:</strong> Text grows larger while maintaining proper layout and spacing</li>
+            <li><strong>Supported range:</strong> Works with all iOS accessibility text sizes, from default to the largest settings</li>
+          </ul>
+          <p>
+            To adjust text size, go to <strong>Settings → Accessibility → Display & Text Size → Larger Text</strong>.
+          </p>
+        </section>
+
+        <section class="legal-section">
+          <h2>Additional Accessibility Features</h2>
+          <p>
+            Beyond the core features listed above, Chickadee Health is built using SwiftUI, which provides automatic support for many other iOS accessibility features:
+          </p>
+          <ul>
+            <li><strong>Reduce Motion:</strong> Respects the system setting to minimize animations and motion effects</li>
+            <li><strong>Button Shapes:</strong> Compatible with iOS Button Shapes setting for clearer interactive elements</li>
+            <li><strong>Increase Contrast:</strong> Works with iOS Increase Contrast setting for additional visual clarity</li>
+            <li><strong>Smart Invert:</strong> Compatible with Smart Invert Colors for users who prefer inverted displays</li>
+          </ul>
+        </section>
+
+        <section class="legal-section">
+          <h2>Accessibility Compliance</h2>
+          <p>
+            Chickadee Health is designed to meet or exceed:
+          </p>
+          <ul>
+            <li><strong>WCAG 2.1 Level AAA:</strong> For contrast ratios (7:1 minimum)</li>
+            <li><strong>Section 508:</strong> Federal accessibility standards</li>
+            <li><strong>Apple Human Interface Guidelines:</strong> Accessibility best practices</li>
+          </ul>
+          <p>
+            For more information about Apple's accessibility features, visit <a href="https://www.apple.com/accessibility/" target="_blank" rel="noopener noreferrer">apple.com/accessibility</a>.
+          </p>
+        </section>
+
+        <section class="legal-section">
+          <h2>Feedback and Support</h2>
+          <p>
+            We're committed to continuously improving accessibility in Chickadee Health. If you encounter accessibility barriers or have suggestions for improvements, please contact us:
+          </p>
+          <ul>
+            <li>Email: <a href="mailto:accessibility@chickadee.family">accessibility@chickadee.family</a></li>
+            <li>Contact form: <a href={import.meta.env.BASE_URL + "contact/"}>Contact Us</a></li>
+          </ul>
+          <p>
+            We welcome feedback from users with disabilities and their caregivers to help us make Chickadee Health more accessible for everyone.
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .legal-page {
+    padding: var(--space-3xl) 0;
+    background: white;
+  }
+
+  .legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .legal-content h1 {
+    font-size: var(--font-size-4xl);
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+  }
+
+  .last-updated {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-3xl);
+    font-style: italic;
+  }
+
+  .legal-section {
+    margin-bottom: var(--space-3xl);
+  }
+
+  .legal-section h2 {
+    font-size: var(--font-size-2xl);
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 2px solid var(--color-border);
+  }
+
+  .legal-section h2:first-of-type {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .legal-section h3 {
+    font-size: var(--font-size-xl);
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+
+  .legal-section p {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+  }
+
+  .legal-section ul {
+    margin-bottom: var(--space-lg);
+    margin-left: var(--space-lg);
+  }
+
+  .legal-section li {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+  }
+
+  .legal-section a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .legal-section a:hover {
+    color: var(--color-accent);
+  }
+
+  .legal-section code {
+    background: var(--color-bg-light);
+    padding: 0.125rem 0.375rem;
+    border-radius: 4px;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.9em;
+    color: var(--color-text);
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .legal-page {
+      padding: var(--space-2xl) 0;
+    }
+
+    .legal-content h1 {
+      font-size: var(--font-size-3xl);
+    }
+
+    .legal-section h2 {
+      font-size: var(--font-size-xl);
+    }
+
+    .legal-section h3 {
+      font-size: var(--font-size-lg);
+    }
+
+    .legal-section ul {
+      margin-left: var(--space-md);
+    }
+  }
+</style>
