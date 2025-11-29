@@ -169,10 +169,29 @@ Enabled plugins (see `.claude/settings.json`):
 This site is the marketing/public website for Chickadee Health (part of DeeDee).
 
 **Related Repositories:**
-- `~/Documents/GitHub/DeeDee-Prototype` - iOS app prototype
-- `~/Documents/GitHub/DeeDee-Backend` - Backend API (handles SMS opt-in, etc.)
+- `~/Documents/GitHub/DeeDee-Prototype` - iOS app (Swift 6.0, SwiftUI, SwiftData)
+- `~/Documents/GitHub/DeeDee-Backend` - Backend API (FastAPI, MongoDB, Telnyx SMS)
 
 The SMS opt-in form on this site connects to DeeDee-Backend.
+
+### Product Features Reference (for messaging accuracy)
+
+When writing marketing copy, these are the actual iOS app capabilities:
+
+**Health Monitoring Tiles** (what users see in the app):
+- Risks, Mobility, Activity, Rest, Vitals, Fatigue, Environmental
+
+**Data Sources** (from Apple Watch + iPhone via HealthKit):
+- Walking speed, gait patterns, step count
+- Sleep stages and quality
+- Heart rate variability
+- Active energy and exercise minutes
+
+**Key Differentiator**: DeeDee predicts fall risk days/weeks ahead using pattern analysis. It is NOT a fall detection system (which alerts after a fall). Marketing copy should emphasize "prevention" and "early warning," not "detection."
+
+**Terminology**:
+- "Flock" = family care network (the people receiving alerts)
+- Plain English required: See `content-messaging` skill for translation guidelines
 
 ## Deployment
 

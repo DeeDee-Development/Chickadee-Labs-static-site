@@ -2,5 +2,19 @@
   "enabledPlugins": {
     "frontend-design@claude-code-plugins": true,
     "feature-dev@claude-code-plugins": true
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./claude-plugins/macedonian-output/hooks-handlers/load-persona.sh",
+            "description": "Load Macedonian restaurant persona for Yaakov (50% chance)"
+          }
+        ]
+      }
+    ]
   }
 }
