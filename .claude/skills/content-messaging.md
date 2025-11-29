@@ -1,6 +1,9 @@
-# Content & Messaging Skill
+---
+name: content-messaging
+description: Writing and content guidelines for Chickadee Health marketing copy. Provides plain English principles, family-centered messaging tone, and copy structure patterns. Use when writing headlines, body copy, CTAs, page content, marketing text, or messaging for the Chickadee static site.
+---
 
-Use this skill when writing copy for the Chickadee Labs / Chickadee static site.
+# Content & Messaging Skill
 
 ## Core Messaging Principles
 
@@ -195,3 +198,8 @@ Ask yourself:
 5. **Would I trust this if I were the user?**
 
 If you answer "no" to any of these, revise.
+
+## Related Skills
+
+- [`design-guide`](./design-guide.md) - Visual design system, color themes, typography
+- [`data-inspired-narrative-content`](./data-inspired-narrative-content/SKILL.md) - Data visualization with narrative storytelling
