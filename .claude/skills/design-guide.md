@@ -1,6 +1,9 @@
-# Design Guide Skill
+---
+name: design-guide
+description: Visual design system for Chickadee Health static site. Covers color themes, typography, spacing, and layout patterns inspired by MyFitnessPal, YAZIO, and WaterMinder. Use when making design decisions, choosing colors, styling components, implementing themes, or creating UI elements.
+---
 
-Use this skill when making design decisions for the Chickadee Labs static site.
+# Design Guide Skill
 
 ## Design Philosophy
 
@@ -230,3 +233,8 @@ When making design choices, ask:
 - Use Inter font (or system font fallback)
 - Implement proper focus states for keyboard navigation
 - Ensure 4.5:1 contrast ratio minimum (WCAG AA)
+
+## Related Skills
+
+- [`content-messaging`](./content-messaging.md) - Writing tone, copy guidelines, plain English principles
+- [`data-inspired-narrative-content`](./data-inspired-narrative-content/SKILL.md) - Data visualization with narrative storytelling
