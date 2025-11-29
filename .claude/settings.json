@@ -1,15 +1,6 @@
 {
   "enabledPlugins": {
     "frontend-design@claude-code-plugins": true,
-    "feature-dev@claude-code-plugins": true,
-    "skill-creator@anthropic-agent-skills": true
-  },
-  "extraKnownMarketplaces": {
-    "anthropic-agent-skills": {
-      "source": {
-        "source": "github",
-        "repo": "anthropics/skills"
-      }
-    }
+    "feature-dev@claude-code-plugins": true
   }
 }
