@@ -18,8 +18,8 @@ interface Props {
 }
 
 const {
-  title = "Prevent Falls Before They Happen | Chickadee Health - Apple Watch App",
-  description = "Chickadee Health uses Apple Watch biometrics to detect fall risks early. Monitor sleep, mobility, and activity patterns to prevent falls before they happen. Peace of mind for families.",
+  title = "Predictive Fall Prevention | Chickadee Health - Apple Watch Health Monitoring",
+  description = "Chickadee Health uses Apple Watch biometrics to predict fall risks before they happen. Smart monitoring of gait, sleep, and activity patterns gives families early warnings—not just fall alerts.",
   simpleNav = false,
   image = "/og-image.png",
   noindex = false
@@ -60,7 +60,7 @@ const ogImageURL = new URL(image, Astro.site).href;
         siteName: "Chickadee Health",
       },
       image: {
-        alt: "Chickadee Health - Fall Prevention for Seniors",
+        alt: "Chickadee Health - Predictive Fall Prevention for Seniors",
       },
     }}
     twitter={{
@@ -68,19 +68,48 @@ const ogImageURL = new URL(image, Astro.site).href;
       title: title,
       description: description,
       image: ogImageURL,
-      imageAlt: "Chickadee Health - Apple Watch Fall Prevention",
+      imageAlt: "Chickadee Health - Predictive Apple Watch Fall Prevention",
     }}
     extend={{
       meta: [
         { name: "theme-color", content: "#F5A623" },
         { name: "apple-mobile-web-app-capable", content: "yes" },
         { name: "apple-mobile-web-app-status-bar-style", content: "default" },
+        { name: "keywords", content: "fall prediction app, Apple Watch fall prevention, elderly health monitoring, caregiver app, gait analysis, senior safety, predictive health, fall risk assessment" },
+        { name: "author", content: "Chickadee Health" },
       ],
       link: [
         { rel: "sitemap", href: "/sitemap-index.xml" },
       ],
     }}
   />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Chickadee Health",
+    "operatingSystem": "iOS",
+    "applicationCategory": "HealthApplication",
+    "description": "Predictive fall risk monitoring for Apple Watch. Analyzes gait, sleep, and activity patterns to predict fall risks before they happen.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Chickadee Health",
+    "url": "https://chickadee.family",
+    "logo": "https://chickadee.family/app-icon.png",
+    "description": "Predictive fall prevention technology for seniors and their families"
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href={import.meta.env.BASE_URL + "favicon.png"}>
