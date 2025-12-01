@@ -213,15 +213,60 @@ const ogImageURL = new URL(image, Astro.site).href;
       transition: transform 0.1s ease;
     }
 
-    /* Cute wiggle animation */
-    @keyframes wiggle {
-      0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(-5deg); }
-      75% { transform: rotate(5deg); }
+    /* Cute chickadee hop animation - like a happy bird! */
+    @keyframes chickadee-hop {
+      0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+      }
+      10% {
+        transform: translateY(-8px) rotate(-3deg) scale(1.05);
+      }
+      20% {
+        transform: translateY(-12px) rotate(3deg) scale(1.1);
+      }
+      30% {
+        transform: translateY(-8px) rotate(-5deg) scale(1.05);
+      }
+      40% {
+        transform: translateY(0) rotate(5deg) scale(1);
+      }
+      50% {
+        transform: translateY(-4px) rotate(-3deg) scale(1.02);
+      }
+      60% {
+        transform: translateY(0) rotate(3deg) scale(1);
+      }
+      70% {
+        transform: translateY(-2px) rotate(-2deg) scale(1.01);
+      }
+      80% {
+        transform: translateY(0) rotate(2deg) scale(1);
+      }
+      90% {
+        transform: translateY(-1px) rotate(-1deg) scale(1);
+      }
+      100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+      }
     }
 
     .logo.wiggle .logo-icon {
-      animation: wiggle 0.5s ease-in-out;
+      animation: chickadee-hop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* Hover effect - gentle bob */
+    .logo:hover .logo-icon {
+      animation: gentle-bob 0.6s ease-in-out infinite;
+    }
+
+    @keyframes gentle-bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
+    /* Don't bob while doing the hop animation */
+    .logo.wiggle:hover .logo-icon {
+      animation: chickadee-hop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     .logo-text {
@@ -324,7 +369,7 @@ const ogImageURL = new URL(image, Astro.site).href;
   </style>
 
   <script>
-    // Cute logo wiggle on click + scroll to top when on homepage
+    // Cute chickadee hop animation on click + scroll to top when on homepage
     document.addEventListener('DOMContentLoaded', () => {
       const logo = document.getElementById('logo-link');
       if (logo) {
@@ -335,7 +380,7 @@ const ogImageURL = new URL(image, Astro.site).href;
             logo.classList.add('wiggle');
             setTimeout(() => {
               logo.classList.remove('wiggle');
-            }, 500);
+            }, 800); // Match the animation duration
             // Smooth scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }
