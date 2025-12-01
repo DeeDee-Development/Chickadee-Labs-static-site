@@ -843,7 +843,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     const iconContainer = document.getElementById('hero-app-icon');
 
     if (iconContainer) {
-      iconContainer.addEventListener('click', (e) => {
+      iconContainer.addEventListener('click', () => {
         // Get the icon's position for confetti origin
         const rect = iconContainer.getBoundingClientRect();
         const x = (rect.left + rect.width / 2) / window.innerWidth;
