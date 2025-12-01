@@ -18,7 +18,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </div>
         <div class="hero-image">
-          <div class="app-icon-container">
+          <div class="app-icon-container" id="hero-app-icon">
             <img src={import.meta.env.BASE_URL + "app-icon.png"} alt="Chickadee Health App Icon" class="app-icon" />
           </div>
         </div>
@@ -296,6 +296,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+  }
+
+  /* Click feedback on the icon */
+  .app-icon-container:active .app-icon {
+    transform: scale(0.95);
   }
 
   .app-icon {
@@ -828,3 +834,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
   }
 </style>
+
+<script>
+  import confetti from 'canvas-confetti';
+
+  // Confetti burst on hero app icon click
+  document.addEventListener('DOMContentLoaded', () => {
+    const iconContainer = document.getElementById('hero-app-icon');
+
+    if (iconContainer) {
+      iconContainer.addEventListener('click', (e) => {
+        // Get the icon's position for confetti origin
+        const rect = iconContainer.getBoundingClientRect();
+        const x = (rect.left + rect.width / 2) / window.innerWidth;
+        const y = (rect.top + rect.height / 2) / window.innerHeight;
+
+        // Burst confetti from the icon!
+        confetti({
+          particleCount: 80,
+          spread: 70,
+          origin: { x, y },
+          colors: ['#F5A623', '#FF8C42', '#FFB74D', '#FF9800', '#FFA726', '#FFCC80'],
+          disableForReducedMotion: true,
+        });
+
+        // Add a second burst for extra fun
+        setTimeout(() => {
+          confetti({
+            particleCount: 40,
+            spread: 100,
+            origin: { x, y },
+            colors: ['#F5A623', '#FF8C42', '#FFB74D'],
+            disableForReducedMotion: true,
+          });
+        }, 150);
+      });
+    }
+  });
+</script>

@@ -16,6 +16,7 @@
     "astro": "^5.0.0",
     "astro-robots-txt": "^1.0.0",
     "astro-seo": "^0.8.4",
+    "canvas-confetti": "^1.9.4",
     "cytoscape": "^3.33.1",
     "cytoscape-dagre": "^2.5.0",
     "dagre": "^0.8.5"
